@@ -13,6 +13,10 @@
 		FFEA8FEE2957459D00E013A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFEA8FEC2957459D00E013A0 /* LaunchScreen.storyboard */; };
 		FFEA8FF829574F0200E013A0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA8FF729574F0200E013A0 /* MainViewModel.swift */; };
 		FFEA8FFC2957586000E013A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA8FFB2957586000E013A0 /* MainViewController.swift */; };
+		FFEA9002295766CF00E013A0 /* CodeReaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA9001295766CF00E013A0 /* CodeReaderViewModel.swift */; };
+		FFEA9004295766E200E013A0 /* CodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA9003295766E200E013A0 /* CodeReaderViewController.swift */; };
+		FFEA9008295767F500E013A0 /* MachineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA9007295767C800E013A0 /* MachineListViewController.swift */; };
+		FFEA9009295767F800E013A0 /* MachineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA9006295767C700E013A0 /* MachineListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		FFEA8FEF2957459D00E013A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEA8FF729574F0200E013A0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		FFEA8FFB2957586000E013A0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FFEA9001295766CF00E013A0 /* CodeReaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeReaderViewModel.swift; sourceTree = "<group>"; };
+		FFEA9003295766E200E013A0 /* CodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeReaderViewController.swift; sourceTree = "<group>"; };
+		FFEA9006295767C700E013A0 /* MachineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListViewModel.swift; sourceTree = "<group>"; };
+		FFEA9007295767C800E013A0 /* MachineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +77,38 @@
 		FFEA8FF52957465100E013A0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FFEA9005295767B900E013A0 /* MachineList */,
+				FFEA9000295766BE00E013A0 /* CodeReader */,
+				FFEA8FFF295766B300E013A0 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FFEA8FFF295766B300E013A0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				FFEA8FF729574F0200E013A0 /* MainViewModel.swift */,
 				FFEA8FFB2957586000E013A0 /* MainViewController.swift */,
 			);
-			path = Modules;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FFEA9000295766BE00E013A0 /* CodeReader */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA9001295766CF00E013A0 /* CodeReaderViewModel.swift */,
+				FFEA9003295766E200E013A0 /* CodeReaderViewController.swift */,
+			);
+			path = CodeReader;
+			sourceTree = "<group>";
+		};
+		FFEA9005295767B900E013A0 /* MachineList */ = {
+			isa = PBXGroup;
+			children = (
+				FFEA9006295767C700E013A0 /* MachineListViewModel.swift */,
+				FFEA9007295767C800E013A0 /* MachineListViewController.swift */,
+			);
+			path = MachineList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +183,11 @@
 			files = (
 				FFEA8FF829574F0200E013A0 /* MainViewModel.swift in Sources */,
 				FFEA8FE22957459B00E013A0 /* AppDelegate.swift in Sources */,
+				FFEA9009295767F800E013A0 /* MachineListViewModel.swift in Sources */,
+				FFEA9002295766CF00E013A0 /* CodeReaderViewModel.swift in Sources */,
+				FFEA9008295767F500E013A0 /* MachineListViewController.swift in Sources */,
 				FFEA8FE42957459B00E013A0 /* SceneDelegate.swift in Sources */,
+				FFEA9004295766E200E013A0 /* CodeReaderViewController.swift in Sources */,
 				FFEA8FFC2957586000E013A0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +332,7 @@
 				DEVELOPMENT_TEAM = P4VV3YY3TJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Machina/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Image Machine";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -321,6 +362,7 @@
 				DEVELOPMENT_TEAM = P4VV3YY3TJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Machina/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Image Machine";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

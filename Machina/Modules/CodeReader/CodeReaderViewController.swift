@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CodeReaderViewController.swift
 //  Machina
 //
 //  Created by Timotius Leonardo Lianoto on 24/12/22.
@@ -7,11 +7,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class CodeReaderViewController: UIViewController {
+    private var viewModel: CodeReaderViewModel
     
-    private let viewModel: MainViewModel
-    
-    required init(viewModel: MainViewModel) {
+    init(viewModel: CodeReaderViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -21,8 +20,8 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .red
+        view.backgroundColor = .red
+        navigationController?.title = "Code Reader"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
-
