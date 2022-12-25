@@ -16,7 +16,7 @@ class CustomNavigationBar: UIView {
     
     private lazy var statusBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .lightGray
         return view
     }()
     
@@ -42,6 +42,7 @@ class CustomNavigationBar: UIView {
         [statusBarView, containerView].forEach { view in
             addSubview(view)
         }
+        alpha = 0.8
         containerView.addSubview(label)
         configureConstraints()
     }
@@ -49,6 +50,6 @@ class CustomNavigationBar: UIView {
     func configureConstraints() {
         statusBarView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, size: .init(width: 0, height: statusBarHeight))
         containerView.anchor(top: statusBarView.bottomAnchor, leading: statusBarView.leadingAnchor, bottom: nil, trailing: statusBarView.trailingAnchor, size: .init(width: 0, height: 80))
-        label.anchor(top: nil, leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 16, right: 0))
+        label.anchor(top: nil, leading: containerView.leadingAnchor, bottom: containerView.bottomAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 0, left: 24, bottom: 16, right: 24))
     }
 }

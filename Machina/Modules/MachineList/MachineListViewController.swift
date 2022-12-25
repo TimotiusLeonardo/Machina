@@ -36,7 +36,9 @@ class MachineListViewController: BaseVC {
     
     func configureConstraints() {
         navigationBar.anchor(top: view.topAnchor,
-                             leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
+                             leading: view.leadingAnchor,
+                             bottom: nil,
+                             trailing: view.trailingAnchor)
     }
 }
 

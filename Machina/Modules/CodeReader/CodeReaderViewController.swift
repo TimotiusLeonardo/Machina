@@ -10,6 +10,8 @@ import UIKit
 class CodeReaderViewController: BaseVC {
     private var viewModel: CodeReaderViewModel
     
+    lazy var navigationBar = CustomNavigationBar(text: "Code Reader")
+    
     required init(viewModel: BaseViewModelContract) {
         self.viewModel = viewModel as! CodeReaderViewModel
         super.init(nibName: nil, bundle: nil)
@@ -22,8 +24,21 @@ class CodeReaderViewController: BaseVC {
     
     override func viewDidLoad() {
         view.backgroundColor = .red
-        navigationController?.title = "Code Reader"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        createViews()
+    }
+    
+    func createViews() {
+        [navigationBar].forEach { view in
+            self.view.addSubview(view)
+        }
+        configureConstraints()
+    }
+    
+    func configureConstraints() {
+        navigationBar.anchor(top: view.topAnchor,
+                             leading: view.leadingAnchor,
+                             bottom: nil,
+                             trailing: view.trailingAnchor)
     }
 }
 
