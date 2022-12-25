@@ -7,12 +7,13 @@
 
 import UIKit
 
-class CodeReaderViewController: UIViewController {
+class CodeReaderViewController: BaseVC {
     private var viewModel: CodeReaderViewModel
     
-    init(viewModel: CodeReaderViewModel) {
-        self.viewModel = viewModel
+    required init(viewModel: BaseViewModelContract) {
+        self.viewModel = viewModel as! CodeReaderViewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.requestDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -23,5 +24,11 @@ class CodeReaderViewController: UIViewController {
         view.backgroundColor = .red
         navigationController?.title = "Code Reader"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+}
+
+extension CodeReaderViewController: RequestProtocol {
+    func updateState(with state: ViewState) {
+        //
     }
 }

@@ -7,6 +7,13 @@
 
 import Foundation
 
-class MachineListViewModel {
+class MachineListViewModel: BaseViewModelContract {
+    weak var requestDelegate: RequestProtocol?
+    var state: ViewState = .idle
+    
+    func updateState(with state: ViewState) {
+        //
+    }
+    
     
 }

@@ -7,6 +7,14 @@
 
 import Foundation
 
-class CodeReaderViewModel {
+class CodeReaderViewModel: BaseViewModelContract {
+    var requestDelegate: RequestProtocol?
+    weak var delegate: BaseViewModelContract?
+    var state: ViewState = .idle
+    
+    func updateState(with state: ViewState) {
+        //
+    }
+    
     
 }

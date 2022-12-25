@@ -14,7 +14,7 @@ final class MainViewModel {
         let machineListViewController = MachineListViewController(viewModel: MachineListViewModel())
         machineListViewController.tabBarItem.title = "Machines"
         machineListViewController.tabBarItem.image = UIImage(systemName: "wrench.and.screwdriver")
-        viewControllers.append(machineListViewController)
+        viewControllers.append(UINavigationController(rootViewController: machineListViewController))
         
         // Create Code Reader Controller
         let codeReaderViewController = CodeReaderViewController(viewModel: CodeReaderViewModel())

@@ -7,12 +7,15 @@
 
 import UIKit
 
-class MachineListViewController: UIViewController {
+class MachineListViewController: BaseVC {
     private var viewModel: MachineListViewModel
     
-    init(viewModel: MachineListViewModel) {
-        self.viewModel = viewModel
+    lazy var navigationBar = CustomNavigationBar(text: "Machines")
+    
+    required init(viewModel: BaseViewModelContract) {
+        self.viewModel = viewModel as! MachineListViewModel
         super.init(nibName: nil, bundle: nil)
+        viewModel.requestDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -21,7 +24,24 @@ class MachineListViewController: UIViewController {
     
     override func viewDidLoad() {
         view.backgroundColor = .blue
-        navigationController?.title = "Machines"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        createViews()
+    }
+    
+    func createViews() {
+        [navigationBar].forEach { view in
+            self.view.addSubview(view)
+        }
+        configureConstraints()
+    }
+    
+    func configureConstraints() {
+        navigationBar.anchor(top: view.topAnchor,
+                             leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor)
+    }
+}
+
+extension MachineListViewController: RequestProtocol {
+    func updateState(with state: ViewState) {
+        //
     }
 }

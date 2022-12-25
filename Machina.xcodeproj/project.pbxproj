@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFA7E8ED295803E30069114E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */; };
+		FFA7E8F0295804E80069114E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8EF295804E80069114E /* UIView+Extensions.swift */; };
+		FFA7E8F429580C990069114E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8F329580C990069114E /* BaseVC.swift */; };
+		FFA7E8F829580DBE0069114E /* BaseViewModelContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8F729580DBE0069114E /* BaseViewModelContract.swift */; };
+		FFA7E8FB2958100E0069114E /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8FA2958100E0069114E /* ViewState.swift */; };
+		FFA7E8FE295818A20069114E /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8FD295818A20069114E /* UIApplication+Extensions.swift */; };
 		FFEA8FE22957459B00E013A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA8FE12957459B00E013A0 /* AppDelegate.swift */; };
 		FFEA8FE42957459B00E013A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA8FE32957459B00E013A0 /* SceneDelegate.swift */; };
 		FFEA8FEB2957459D00E013A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA8FEA2957459D00E013A0 /* Assets.xcassets */; };
@@ -20,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		FFA7E8EF295804E80069114E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		FFA7E8F329580C990069114E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		FFA7E8F729580DBE0069114E /* BaseViewModelContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelContract.swift; sourceTree = "<group>"; };
+		FFA7E8FA2958100E0069114E /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		FFA7E8FD295818A20069114E /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		FFEA8FDE2957459B00E013A0 /* Machina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Machina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA8FE12957459B00E013A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFEA8FE32957459B00E013A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +57,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFA7E8EB295803C40069114E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FFA7E8EE295804CD0069114E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFA7E8EF295804E80069114E /* UIView+Extensions.swift */,
+				FFA7E8FD295818A20069114E /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFA7E8F129580C7D0069114E /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				FFA7E8F329580C990069114E /* BaseVC.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		FFA7E8F229580C8C0069114E /* BaseProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				FFA7E8F929580FE40069114E /* Enums */,
+				FFA7E8F729580DBE0069114E /* BaseViewModelContract.swift */,
+			);
+			path = BaseProtocol;
+			sourceTree = "<group>";
+		};
+		FFA7E8F929580FE40069114E /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FFA7E8FA2958100E0069114E /* ViewState.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		FFEA8FD52957459B00E013A0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +118,10 @@
 		FFEA8FE02957459B00E013A0 /* Machina */ = {
 			isa = PBXGroup;
 			children = (
+				FFA7E8F229580C8C0069114E /* BaseProtocol */,
+				FFA7E8F129580C7D0069114E /* BaseClass */,
+				FFA7E8EE295804CD0069114E /* Extensions */,
+				FFA7E8EB295803C40069114E /* CustomViews */,
 				FFEA8FF52957465100E013A0 /* Modules */,
 				FFEA8FE12957459B00E013A0 /* AppDelegate.swift */,
 				FFEA8FE32957459B00E013A0 /* SceneDelegate.swift */,
@@ -181,9 +239,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA7E8FE295818A20069114E /* UIApplication+Extensions.swift in Sources */,
+				FFA7E8F829580DBE0069114E /* BaseViewModelContract.swift in Sources */,
 				FFEA8FF829574F0200E013A0 /* MainViewModel.swift in Sources */,
+				FFA7E8F429580C990069114E /* BaseVC.swift in Sources */,
 				FFEA8FE22957459B00E013A0 /* AppDelegate.swift in Sources */,
+				FFA7E8F0295804E80069114E /* UIView+Extensions.swift in Sources */,
 				FFEA9009295767F800E013A0 /* MachineListViewModel.swift in Sources */,
+				FFA7E8ED295803E30069114E /* CustomNavigationBar.swift in Sources */,
+				FFA7E8FB2958100E0069114E /* ViewState.swift in Sources */,
 				FFEA9002295766CF00E013A0 /* CodeReaderViewModel.swift in Sources */,
 				FFEA9008295767F500E013A0 /* MachineListViewController.swift in Sources */,
 				FFEA8FE42957459B00E013A0 /* SceneDelegate.swift in Sources */,
