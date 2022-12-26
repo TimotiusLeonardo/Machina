@@ -27,12 +27,13 @@ class MachineListViewModel: BaseViewModelContract {
         state = .success(onSuccess)
     }
     
-    func addMachine() {
+    func addMachine(onSuccess: @escaping onSuccess, onError: @escaping onError) {
         let machine = Machine(name: "Timotius", type: "Otomotif", qrCodeNumber: "12345")
         
         do {
             try realm?.write({
                 realm?.add(machine)
+                state = .success(onSuccess)
             })
         } catch {
             Log("Error add machine: \(error)")

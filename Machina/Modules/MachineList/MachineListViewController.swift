@@ -97,9 +97,10 @@ extension MachineListViewController {
     }
     
     @objc func onAddButtonTapped() {
-        viewModel.addMachine()
-        viewModel.getMachinesData { [weak self] in
+        viewModel.addMachine { [weak self] in
             self?.tableView.reloadData()
+        } onError: {
+            // Nothing to do
         }
     }
 }
