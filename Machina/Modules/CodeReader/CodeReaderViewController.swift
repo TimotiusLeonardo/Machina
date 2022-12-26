@@ -12,6 +12,18 @@ class CodeReaderViewController: BaseVC {
     private var viewModel: CodeReaderViewModel
     
     lazy var navigationBar = CustomNavigationBar(title: "Code Reader")
+    private lazy var statusBarView: UIView = {
+        let view = UIView()
+        view.layer.zPosition = 10
+        view.backgroundColor = navigationBar.backgroundColor
+        return view
+    }()
+    private lazy var cameraPreviewContainer: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
     var captureSession: AVCaptureSession?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
@@ -26,12 +38,13 @@ class CodeReaderViewController: BaseVC {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         view.backgroundColor = .black
         createViews()
     }
     
     func createViews() {
-        [navigationBar].forEach { view in
+        [navigationBar, statusBarView, cameraPreviewContainer].forEach { view in
             self.view.addSubview(view)
         }
         configureQRCodeScanner()
@@ -74,7 +87,7 @@ class CodeReaderViewController: BaseVC {
         previewLayer?.frame = view.layer.bounds
         previewLayer?.videoGravity = .resizeAspectFill
         guard let previewLayer = previewLayer else { return }
-        view.layer.addSublayer(previewLayer)
+        cameraPreviewContainer.layer.addSublayer(previewLayer)
         
         startRunningCaptureSession()
     }
@@ -87,10 +100,20 @@ class CodeReaderViewController: BaseVC {
     }
     
     func configureConstraints() {
-        navigationBar.anchor(top: view.topAnchor,
+        navigationBar.anchor(top: statusBarView.bottomAnchor,
                              leading: view.leadingAnchor,
                              bottom: nil,
-                             trailing: view.trailingAnchor)
+                             trailing: view.trailingAnchor,
+                             size: .init(width: 0, height: 56))
+        statusBarView.anchor(top: view.topAnchor,
+                             leading: view.leadingAnchor,
+                             bottom: nil,
+                             trailing: view.trailingAnchor,
+                             size: .init(width: 0, height: UIApplication.statusBarHeight))
+        cameraPreviewContainer.anchor(top: navigationBar.bottomAnchor,
+                                      leading: view.leadingAnchor,
+                                      bottom: view.bottomAnchor,
+                                      trailing: view.trailingAnchor)
     }
 }
 
