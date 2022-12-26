@@ -43,6 +43,16 @@ class CodeReaderViewController: BaseVC {
         createViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        startRunningCaptureSession()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopRunningCaptureSession()
+    }
+    
     func createViews() {
         [navigationBar, statusBarView, cameraPreviewContainer].forEach { view in
             self.view.addSubview(view)
