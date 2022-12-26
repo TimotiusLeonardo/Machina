@@ -11,7 +11,7 @@ import AVFoundation
 class CodeReaderViewController: BaseVC {
     private var viewModel: CodeReaderViewModel
     
-    lazy var navigationBar = CustomNavigationBar(text: "Code Reader")
+    lazy var navigationBar = CustomNavigationBar(title: "Code Reader")
     var captureSession: AVCaptureSession?
     var previewLayer: AVCaptureVideoPreviewLayer?
     
