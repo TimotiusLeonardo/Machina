@@ -76,9 +76,7 @@ class CodeReaderViewController: BaseVC {
         guard let previewLayer = previewLayer else { return }
         view.layer.addSublayer(previewLayer)
         
-        DispatchQueue.global().async {
-            captureSession.startRunning()
-        }
+        startRunningCaptureSession()
     }
     
     func failed() {
@@ -129,11 +127,21 @@ extension CodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
             let alertView = viewModel.createAlertView(title: "Error scanned QR",
                                                       message: "This code is not found in your machine's database, please try another QR scan")
             alertView.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] _ in
-                self?.captureSession?.startRunning()
+                self?.startRunningCaptureSession()
             }))
             self.present(alertView, animated: true)
         } else {
             // Present new page for available machine detail
         }
+    }
+    
+    func startRunningCaptureSession() {
+        DispatchQueue.global().async {
+            self.captureSession?.startRunning()
+        }
+    }
+    
+    func stopRunningCaptureSession() {
+        captureSession?.stopRunning()
     }
 }
