@@ -57,6 +57,9 @@ class MachineListViewController: BaseVC {
         super.viewDidLoad()
         view.backgroundColor = .blue
         createViews()
+        viewModel.getMachinesData { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
     
     func createViews() {
@@ -94,19 +97,31 @@ extension MachineListViewController {
     }
     
     @objc func onAddButtonTapped() {
-        Log("Add button tapped")
+        viewModel.addMachine()
+        viewModel.getMachinesData { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
 extension MachineListViewController: RequestProtocol {
     func updateState(with state: ViewState) {
-        //
+        switch state {
+        case .idle:
+            Log("Nothing to do")
+        case .loading:
+            Log("Nothing to do")
+        case .success(let onSuccess):
+            onSuccess?()
+        case .error(let onError):
+            onError?()
+        }
     }
 }
 
 extension MachineListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.machines?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

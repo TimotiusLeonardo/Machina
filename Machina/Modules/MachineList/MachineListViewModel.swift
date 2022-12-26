@@ -6,8 +6,37 @@
 //
 
 import Foundation
+import RealmSwift
 
 class MachineListViewModel: BaseViewModelContract {
     weak var requestDelegate: RequestProtocol?
-    var state: ViewState = .idle
+    var stateDispatchQueue: DispatchQueue = .main
+    var state: ViewState = .idle {
+        didSet {
+            stateDispatchQueue.async {
+                self.requestDelegate?.updateState(with: self.state)
+            }
+        }
+    }
+    var realm = try? Realm()
+    var machines: Results<Machine>?
+    
+    func getMachinesData(onSuccess: @escaping onSuccess) {
+        let machines = realm?.objects(Machine.self)
+        self.machines = machines
+        state = .success(onSuccess)
+    }
+    
+    func addMachine() {
+        let machine = Machine(name: "Timotius", type: "Otomotif", qrCodeNumber: "12345")
+        
+        do {
+            try realm?.write({
+                realm?.add(machine)
+            })
+        } catch {
+            Log("Error add machine: \(error)")
+        }
+        
+    }
 }
