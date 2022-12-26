@@ -10,11 +10,16 @@ import UIKit
 class MachineListViewController: BaseVC {
     private var viewModel: MachineListViewModel
     
-    lazy var navigationBar = CustomNavigationBar(title: "Machines")
+    lazy var navigationBar: CustomNavigationBar = {
+        let navbar = CustomNavigationBar(title: "Machines")
+        navbar.configureToolbar([addButton, sortButton])
+        return navbar
+    }()
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .white
         return tableView
     }()
     private lazy var statusBarView: UIView = {
@@ -22,6 +27,20 @@ class MachineListViewController: BaseVC {
         view.layer.zPosition = 10
         view.backgroundColor = navigationBar.backgroundColor
         return view
+    }()
+    
+    private lazy var sortButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "slider.horizontal.3"), for: .normal)
+        button.addTarget(self, action: #selector(onSortButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.addTarget(self, action: #selector(onAddButtonTapped), for: .touchUpInside)
+        return button
     }()
     
     required init(viewModel: BaseViewModelContract) {
@@ -40,15 +59,11 @@ class MachineListViewController: BaseVC {
         createViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
     func createViews() {
         [navigationBar, statusBarView, tableView].forEach { view in
             self.view.addSubview(view)
         }
+        navigationBar.layoutIfNeeded()
         configureConstraints()
     }
     
@@ -67,6 +82,19 @@ class MachineListViewController: BaseVC {
                          leading: view.leadingAnchor,
                          bottom: view.bottomAnchor,
                          trailing: view.trailingAnchor)
+        sortButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        addButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+    }
+}
+
+// MARK: - OBJC functions
+extension MachineListViewController {
+    @objc func onSortButtonTapped() {
+        Log("Sort button tapped")
+    }
+    
+    @objc func onAddButtonTapped() {
+        Log("Add button tapped")
     }
 }
 
@@ -85,5 +113,9 @@ extension MachineListViewController: UITableViewDelegate, UITableViewDataSource 
         let cell = UITableViewCell()
         cell.backgroundColor = .white
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

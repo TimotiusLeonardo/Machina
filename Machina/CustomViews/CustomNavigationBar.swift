@@ -81,14 +81,14 @@ class CustomNavigationBar: UIView {
             top: nil,
             leading: nil,
             bottom: nil,
-            trailing: self.safeAreaLayoutGuide.trailingAnchor,
+            trailing: trailingAnchor,
             padding: .init(top: 0, left: 0, bottom: 0, right: 24),
             size: .init(width: 0, height: 24))
         toolbarStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         navbarLabel.anchor(
             top: nil,
-            leading: withBackButton ? navbarChevronButton.trailingAnchor : self.safeAreaLayoutGuide.leadingAnchor,
+            leading: withBackButton ? navbarChevronButton.trailingAnchor : leadingAnchor,
             bottom: nil,
             trailing: toolbarStackView.leadingAnchor,
             padding: .init(top: 0, left: withBackButton ? 0 : 24, bottom: 0, right: 24),
@@ -101,8 +101,7 @@ class CustomNavigationBar: UIView {
         items.forEach { item in
             toolbarStackView.addArrangedSubview(item)
         }
-        toolbarStackView.setNeedsLayout()
-        navbarLabel.setNeedsLayout()
+        toolbarStackView.layoutSubviews()
     }
     
     @objc private func onButtonBackTapped() {
