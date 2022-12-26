@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Image Machine wants to access tour camera to scan the available QR Code</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Image Machine wants to access your gallery to pick photos for your machine&apos;s thumbnail</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

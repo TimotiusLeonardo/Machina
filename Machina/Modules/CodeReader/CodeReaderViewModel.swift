@@ -5,16 +5,16 @@
 //  Created by Timotius Leonardo Lianoto on 24/12/22.
 //
 
-import Foundation
+import UIKit
 
 class CodeReaderViewModel: BaseViewModelContract {
-    var requestDelegate: RequestProtocol?
-    weak var delegate: BaseViewModelContract?
+    weak var requestDelegate: RequestProtocol?
     var state: ViewState = .idle
     
-    func updateState(with state: ViewState) {
-        //
+    func createAlertView(title: String, message: String) -> UIAlertController {
+        let alertView = UIAlertController(title: title,
+                                          message: message,
+                                          preferredStyle: .alert)
+        return alertView
     }
-    
-    
 }

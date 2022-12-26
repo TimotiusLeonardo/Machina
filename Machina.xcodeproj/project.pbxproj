@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF66603A295948F400988F7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF666039295948F400988F7D /* Constants.swift */; };
 		FFA7E8ED295803E30069114E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */; };
 		FFA7E8F0295804E80069114E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8EF295804E80069114E /* UIView+Extensions.swift */; };
 		FFA7E8F429580C990069114E /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA7E8F329580C990069114E /* BaseVC.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF666039295948F400988F7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		FFA7E8EF295804E80069114E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		FFA7E8F329580C990069114E /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				FFEA8FEA2957459D00E013A0 /* Assets.xcassets */,
 				FFEA8FEC2957459D00E013A0 /* LaunchScreen.storyboard */,
 				FFEA8FEF2957459D00E013A0 /* Info.plist */,
+				FF666039295948F400988F7D /* Constants.swift */,
 			);
 			path = Machina;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				FFEA8FF829574F0200E013A0 /* MainViewModel.swift in Sources */,
 				FFA7E8F429580C990069114E /* BaseVC.swift in Sources */,
 				FFEA8FE22957459B00E013A0 /* AppDelegate.swift in Sources */,
+				FF66603A295948F400988F7D /* Constants.swift in Sources */,
 				FFA7E8F0295804E80069114E /* UIView+Extensions.swift in Sources */,
 				FFEA9009295767F800E013A0 /* MachineListViewModel.swift in Sources */,
 				FFA7E8ED295803E30069114E /* CustomNavigationBar.swift in Sources */,
@@ -403,6 +407,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,6 +438,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

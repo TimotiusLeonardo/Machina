@@ -6,8 +6,20 @@
 //
 
 import UIKit
+import AVFoundation
 
-final class MainViewModel {
+final class MainViewModel: BaseViewModelContract {
+    var requestDelegate: RequestProtocol?
+    private let asyncDispatchQueue: DispatchQueue = DispatchQueue.main
+    
+    var state: ViewState = .idle {
+        didSet {
+            asyncDispatchQueue.async {
+                self.requestDelegate?.updateState(with: self.state)
+            }
+        }
+    }
+    
     var tabBarViewControllers: [UIViewController] {
         var viewControllers = [UIViewController]()
         // Create List Machine Controller
@@ -23,5 +35,26 @@ final class MainViewModel {
         viewControllers.append(codeReaderViewController)
         
         return viewControllers
+    }
+    
+    func askUserPermissionForCameraUsage(onSuccess: @escaping onSuccess, onError: @escaping onError) {
+        state = .loading
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+            if response {
+                self.state = .success(onSuccess)
+                Log("Camera access granted")
+            } else {
+                Log("Camera access denied")
+                self.state = .error(onError)
+            }
+        }
+    }
+    
+    func createAlertView() -> UIAlertController {
+        let alertView = UIAlertController(title: "Camera Access Denied",
+                                          message: "This feature require your camera access, please allow it first it your phone settings preferences",
+                                          preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "OK", style: .default))
+        return alertView
     }
 }

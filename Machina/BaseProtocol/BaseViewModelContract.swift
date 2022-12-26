@@ -11,8 +11,7 @@ protocol RequestProtocol: AnyObject {
     func updateState(with state: ViewState)
 }
 
-protocol BaseViewModelContract: RequestProtocol {
+protocol BaseViewModelContract {
     var requestDelegate: RequestProtocol? { get set }
     var state: ViewState { get set }
-    func updateState(with state: ViewState)
 }

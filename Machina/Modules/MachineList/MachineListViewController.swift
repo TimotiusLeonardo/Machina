@@ -15,7 +15,7 @@ class MachineListViewController: BaseVC {
     required init(viewModel: BaseViewModelContract) {
         self.viewModel = viewModel as! MachineListViewModel
         super.init(nibName: nil, bundle: nil)
-        viewModel.requestDelegate = self
+        self.viewModel.requestDelegate = self
     }
     
     required init?(coder: NSCoder) {
