@@ -2,13 +2,13 @@
 An iOS Application to list your machine collection and add thumbnail to it
 
 ## Minimum Requirements
-XCode : 13
-iOS   : 13.0
+- XCode : 13
+- iOS   : 13.0
 
 ## System That This App Used
-Realm by MongoDB  : For local database to support the CRUD feature in this app
-OpalImagePicker   : An Open Source Library to make picking image easier and fasten the development (https://github.com/opalorange/OpalImagePicker)
-UIKit             : Basic UI Builder that most of developer used. This app created with programmatically layouting using NSLayoutConstraint
+1. Realm by MongoDB  : For local database to support the CRUD feature in this app
+2. OpalImagePicker   : An Open Source Library to make picking image easier and fasten the development (https://github.com/opalorange/OpalImagePicker)
+3. UIKit             : Basic UI Builder that most of developer used. This app created with programmatically layouting using NSLayoutConstraint
 
 
 # How To Use
