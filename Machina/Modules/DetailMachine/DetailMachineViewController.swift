@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import OpalImagePicker
+import Photos
 
 class DetailMachineViewController: BaseVC {
     private var viewModel: DetailMachineViewModel
@@ -68,6 +70,28 @@ class DetailMachineViewController: BaseVC {
         return pickerView
     }()
     
+    private lazy var imageGalleryPicker: OpalImagePickerController = {
+        let pickerController = OpalImagePickerController()
+        pickerController.delegate = self
+        pickerController.maximumSelectionsAllowed = 10
+        pickerController.imagePickerDelegate = self
+        pickerController.allowedMediaTypes = Set([PHAssetMediaType.image])
+        let configuration = OpalImagePickerConfiguration()
+        configuration.maximumSelectionsAllowedMessage = NSLocalizedString("You cannot select that many images!", comment: "")
+        pickerController.configuration = configuration
+        return pickerController
+    }()
+    
+    private lazy var machineImageButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Machine Image", for: .normal)
+        button.addTarget(self, action: #selector(onMachineImageTapped), for: .touchUpInside)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.isEnabled = false
+        return button
+    }()
+    
     private var machineTypeSection: DetailListView
     private var machineQrCodeNumberSection: DetailListView
     private var machineLastMaintenanceSection: DetailListView
@@ -84,7 +108,6 @@ class DetailMachineViewController: BaseVC {
         self.viewModel.requestDelegate = self
         titleTextField.text = self.viewModel.viewData.name
         uuidLabel.text = self.viewModel.viewData.uuid
-        Log("UUID: \(uuidLabel.text)")
         machineTypeSection.delegate = self
         machineLastMaintenanceSection.delegate = self
         machineLastMaintenanceSection.delegate = self
@@ -98,7 +121,7 @@ class DetailMachineViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection, uuidLabel].forEach { view in
+        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection, uuidLabel, machineImageButton].forEach { view in
             self.view.addSubview(view)
         }
         navigationBar.configureToolbar([editButton])
@@ -160,6 +183,12 @@ class DetailMachineViewController: BaseVC {
                                           trailing: machineQrCodeNumberSection.trailingAnchor,
                                           padding: .init(top: 8, left: 0, bottom: 0, right: 0))
         machineLastMaintenanceSection.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        machineImageButton.anchor(top: machineLastMaintenanceSection.bottomAnchor,
+                                  leading: machineLastMaintenanceSection.leadingAnchor,
+                                  bottom: nil,
+                                  trailing: nil,
+                                  padding: .init(top: 32, left: 0, bottom: 0, right: 0),
+                                  size: .init(width: 0, height: 0))
         
     }
     
@@ -181,9 +210,11 @@ class DetailMachineViewController: BaseVC {
     
     func toggleTitleTextFieldEnabled(to state: Bool) {
         titleTextField.isEnabled = state
+        machineImageButton.isEnabled = state
         UIView.animate(withDuration: 0.2,
                        delay: 0) {
             self.titleTextField.textColor = state ? .black : .lightGray
+            self.machineImageButton.setTitleColor(state ? .systemBlue : .lightGray, for: .normal)
         }
     }
     
@@ -218,6 +249,13 @@ extension DetailMachineViewController {
         toggleTitleTextFieldEnabled(to: isTextFieldEnabled)
     }
     
+    @objc func onMachineImageTapped() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            return
+        }
+        present(imageGalleryPicker, animated: true)
+    }
+    
     @objc func onTextFieldUpdated() {
         updateState = .updated
     }
@@ -246,5 +284,15 @@ extension DetailMachineViewController: RequestProtocol {
 extension DetailMachineViewController: DetailListViewDelegate {
     func onUpdatedTextFieldValue() {
         updateState = .updated
+    }
+}
+
+extension DetailMachineViewController: OpalImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingAssets assets: [PHAsset]) {
+        viewModel.saveSelectedImageUrl(assets: assets, onSuccess: { [weak self] in
+            // TODO: Show pictures
+            self?.updateState = .updated
+            self?.imageGalleryPicker.dismiss(animated: true)
+        })
     }
 }

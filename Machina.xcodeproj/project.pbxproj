@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EBC608F80149AE68A44165C /* Pods_Machina.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4998B706BBD30246F228269 /* Pods_Machina.framework */; };
 		FF21E5752959F5DE008A8703 /* MachineListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E5742959F5DE008A8703 /* MachineListModel.swift */; };
 		FF21E578295A7372008A8703 /* MachineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E577295A7372008A8703 /* MachineListCell.swift */; };
 		FF21E57A295A77FA008A8703 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */; };
@@ -39,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0335B3ABDE8852D7E225EAE3 /* Pods-Machina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Machina.debug.xcconfig"; path = "Target Support Files/Pods-Machina/Pods-Machina.debug.xcconfig"; sourceTree = "<group>"; };
+		AC6E24304BFF7B673D2D2807 /* Pods-Machina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Machina.release.xcconfig"; path = "Target Support Files/Pods-Machina/Pods-Machina.release.xcconfig"; sourceTree = "<group>"; };
+		B4998B706BBD30246F228269 /* Pods_Machina.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Machina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF21E5742959F5DE008A8703 /* MachineListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListModel.swift; sourceTree = "<group>"; };
 		FF21E577295A7372008A8703 /* MachineListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListCell.swift; sourceTree = "<group>"; };
 		FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
@@ -77,12 +81,31 @@
 			files = (
 				FF66603F295955F400988F7D /* RealmSwift in Frameworks */,
 				FF66603D295955F400988F7D /* Realm in Frameworks */,
+				5EBC608F80149AE68A44165C /* Pods_Machina.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFDE44D9431E7A1EF8D2E7E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0335B3ABDE8852D7E225EAE3 /* Pods-Machina.debug.xcconfig */,
+				AC6E24304BFF7B673D2D2807 /* Pods-Machina.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE7BB902A76EF9D274E5099C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4998B706BBD30246F228269 /* Pods_Machina.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF21E576295A7353008A8703 /* cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +191,8 @@
 			children = (
 				FFEA8FE02957459B00E013A0 /* Machina */,
 				FFEA8FDF2957459B00E013A0 /* Products */,
+				AFDE44D9431E7A1EF8D2E7E4 /* Pods */,
+				DE7BB902A76EF9D274E5099C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,9 +270,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFEA8FF22957459D00E013A0 /* Build configuration list for PBXNativeTarget "Machina" */;
 			buildPhases = (
+				72A5EC3FD0FD299D22D1CE8B /* [CP] Check Pods Manifest.lock */,
 				FFEA8FDA2957459B00E013A0 /* Sources */,
 				FFEA8FDB2957459B00E013A0 /* Frameworks */,
 				FFEA8FDC2957459B00E013A0 /* Resources */,
+				43FC33CBF0298768BA099F8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -287,7 +314,7 @@
 			);
 			mainGroup = FFEA8FD52957459B00E013A0;
 			packageReferences = (
-				FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */,
+				FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */,
 			);
 			productRefGroup = FFEA8FDF2957459B00E013A0 /* Products */;
 			projectDirPath = "";
@@ -309,6 +336,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43FC33CBF0298768BA099F8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Machina/Pods-Machina-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Machina/Pods-Machina-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Machina/Pods-Machina-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72A5EC3FD0FD299D22D1CE8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Machina-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFEA8FDA2957459B00E013A0 /* Sources */ = {
@@ -475,6 +544,7 @@
 		};
 		FFEA8FF32957459D00E013A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0335B3ABDE8852D7E225EAE3 /* Pods-Machina.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -506,6 +576,7 @@
 		};
 		FFEA8FF42957459D00E013A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC6E24304BFF7B673D2D2807 /* Pods-Machina.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -559,7 +630,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -572,12 +643,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		FF66603C295955F400988F7D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = Realm;
 		};
 		FF66603E295955F400988F7D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
