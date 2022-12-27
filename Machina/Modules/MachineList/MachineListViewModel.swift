@@ -40,4 +40,22 @@ class MachineListViewModel: BaseViewModelContract {
         }
         
     }
+    
+    func removeMachine(at indexPath: IndexPath) {
+        guard let machines = machines,
+              machines.count > indexPath.row else {
+            // Index out of bound
+            return
+        }
+        
+        let itemToDelete = machines[indexPath.row]
+        
+        do {
+            try realm?.write({
+                realm?.delete(itemToDelete)
+            })
+        } catch {
+            Log("Error add machine: \(error)")
+        }
+    }
 }
