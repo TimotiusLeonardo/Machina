@@ -10,6 +10,8 @@ import UIKit
 class MachineListViewController: BaseVC {
     private var viewModel: MachineListViewModel
     
+    var sortAscending: Bool = false
+    
     lazy var navigationBar: CustomNavigationBar = {
         let navbar = CustomNavigationBar(title: "Machines")
         navbar.configureToolbar([addButton, sortButton])
@@ -61,9 +63,6 @@ class MachineListViewController: BaseVC {
         super.viewDidLoad()
         view.backgroundColor = .blue
         createViews()
-        viewModel.getMachinesData { [weak self] in
-            self?.tableView.reloadData()
-        }
     }
     
     func createViews() {
@@ -109,7 +108,10 @@ class MachineListViewController: BaseVC {
 // MARK: - OBJC functions
 extension MachineListViewController {
     @objc func onSortButtonTapped() {
-        Log("Sort button tapped")
+        sortAscending.toggle()
+        viewModel.sortMachineBy = .name(ascending: sortAscending)
+        tableView.reloadData()
+        showToast(message: "Success sort \(sortAscending ? "ascending" : "decending")", type: .success)
     }
     
     @objc func onAddButtonTapped() {

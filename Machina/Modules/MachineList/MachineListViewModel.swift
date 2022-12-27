@@ -10,6 +10,11 @@ import RealmSwift
 import UIKit
 
 class MachineListViewModel: BaseViewModelContract {
+    enum SortType {
+        case name(ascending: Bool)
+        case none
+    }
+    
     weak var requestDelegate: RequestProtocol?
     var stateDispatchQueue: DispatchQueue = .main
     var state: ViewState = .idle {
@@ -20,12 +25,16 @@ class MachineListViewModel: BaseViewModelContract {
         }
     }
     var realm = try? Realm()
-    var machines: Results<Machine>?
-    
-    func getMachinesData(onSuccess: @escaping onSuccess) {
-        let machines = realm?.objects(Machine.self)
-        self.machines = machines
-        state = .success(onSuccess)
+    var sortMachineBy: SortType = .none
+    var machines: Results<Machine>? {
+        get {
+            switch sortMachineBy {
+            case .name(let ascending):
+                return realm?.objects(Machine.self).sorted(byKeyPath: "name", ascending: ascending)
+            case .none:
+                return realm?.objects(Machine.self)
+            }
+        }
     }
     
     func createAlertView(title: String, message: String) -> UIAlertController {

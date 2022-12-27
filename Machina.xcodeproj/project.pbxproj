@@ -10,6 +10,7 @@
 		FF21E5752959F5DE008A8703 /* MachineListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E5742959F5DE008A8703 /* MachineListModel.swift */; };
 		FF21E578295A7372008A8703 /* MachineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E577295A7372008A8703 /* MachineListCell.swift */; };
 		FF21E57A295A77FA008A8703 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */; };
+		FF21E57C295A8EE9008A8703 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E57B295A8EE9008A8703 /* UIViewController+Extensions.swift */; };
 		FF66603A295948F400988F7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF666039295948F400988F7D /* Constants.swift */; };
 		FF66603D295955F400988F7D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603C295955F400988F7D /* Realm */; };
 		FF66603F295955F400988F7D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603E295955F400988F7D /* RealmSwift */; };
@@ -35,6 +36,7 @@
 		FF21E5742959F5DE008A8703 /* MachineListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListModel.swift; sourceTree = "<group>"; };
 		FF21E577295A7372008A8703 /* MachineListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListCell.swift; sourceTree = "<group>"; };
 		FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		FF21E57B295A8EE9008A8703 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FF666039295948F400988F7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		FFA7E8EF295804E80069114E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				FFA7E8EF295804E80069114E /* UIView+Extensions.swift */,
 				FFA7E8FD295818A20069114E /* UIApplication+Extensions.swift */,
 				FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */,
+				FF21E57B295A8EE9008A8703 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				FF21E5752959F5DE008A8703 /* MachineListModel.swift in Sources */,
 				FFA7E8F429580C990069114E /* BaseVC.swift in Sources */,
 				FFEA8FE22957459B00E013A0 /* AppDelegate.swift in Sources */,
+				FF21E57C295A8EE9008A8703 /* UIViewController+Extensions.swift in Sources */,
 				FF66603A295948F400988F7D /* Constants.swift in Sources */,
 				FF21E578295A7372008A8703 /* MachineListCell.swift in Sources */,
 				FF21E57A295A77FA008A8703 /* UITableViewCell+Extensions.swift in Sources */,
