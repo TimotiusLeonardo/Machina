@@ -50,6 +50,17 @@ class DetailMachineViewController: BaseVC {
         return button
     }()
     
+    private lazy var timePickerView: UIDatePicker = {
+        let pickerView = UIDatePicker()
+        if #available(iOS 13.4, *) {
+            pickerView.preferredDatePickerStyle = .wheels
+        }
+        pickerView.datePickerMode = .date
+        pickerView.maximumDate = Date()
+        pickerView.addTarget(self, action: #selector(didPickDateFromPicker), for: .valueChanged)
+        return pickerView
+    }()
+    
     private var machineTypeSection: DetailListView
     private var machineQrCodeNumberSection: DetailListView
     private var machineLastMaintenanceSection: DetailListView
@@ -68,6 +79,7 @@ class DetailMachineViewController: BaseVC {
         machineTypeSection.delegate = self
         machineLastMaintenanceSection.delegate = self
         machineLastMaintenanceSection.delegate = self
+        machineLastMaintenanceSection.descriptionTextfield.inputView = timePickerView
     }
     
     required init?(coder: NSCoder) {
@@ -189,6 +201,11 @@ extension DetailMachineViewController {
     }
     
     @objc func onTextFieldUpdated() {
+        updateState = .updated
+    }
+    
+    @objc func didPickDateFromPicker() {
+        machineLastMaintenanceSection.descriptionTextfield.text = timePickerView.date.convertToStringFormat()
         updateState = .updated
     }
 }

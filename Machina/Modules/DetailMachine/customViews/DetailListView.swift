@@ -21,7 +21,7 @@ class DetailListView: UIView {
         return label
     }()
     
-    private lazy var descriptionTextfield: UITextField = {
+    lazy var descriptionTextfield: UITextField = {
         let textField = UITextField()
         textField.font = .systemFont(ofSize: 12, weight: .regular)
         textField.placeholder = "Description"
