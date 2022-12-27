@@ -28,6 +28,13 @@ class DetailMachineViewController: BaseVC {
         return view
     }()
     
+    private lazy var uuidLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.textColor = .lightGray
+        return label
+    }()
+    
     private lazy var titleTextField: UITextField = {
         let view = UITextField()
         view.font = .systemFont(ofSize: 16, weight: .heavy)
@@ -76,6 +83,8 @@ class DetailMachineViewController: BaseVC {
         super.init(nibName: nil, bundle: nil)
         self.viewModel.requestDelegate = self
         titleTextField.text = self.viewModel.viewData.name
+        uuidLabel.text = self.viewModel.viewData.uuid
+        Log("UUID: \(uuidLabel.text)")
         machineTypeSection.delegate = self
         machineLastMaintenanceSection.delegate = self
         machineLastMaintenanceSection.delegate = self
@@ -89,7 +98,7 @@ class DetailMachineViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection].forEach { view in
+        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection, uuidLabel].forEach { view in
             self.view.addSubview(view)
         }
         navigationBar.configureToolbar([editButton])
@@ -109,11 +118,20 @@ class DetailMachineViewController: BaseVC {
                              bottom: nil,
                              trailing: view.trailingAnchor,
                              size: .init(width: 0, height: UIApplication.statusBarHeight))
-        titleTextField.anchor(top: navigationBar.bottomAnchor,
+        uuidLabel.anchor(top: navigationBar.bottomAnchor,
+                         leading: view.leadingAnchor,
+                         bottom: nil,
+                         trailing: view.trailingAnchor,
+                         padding: .init(top: 32,
+                                        left: 24,
+                                        bottom: 0,
+                                        right: 24),
+                         size: .init(width: 0, height: 0))
+        titleTextField.anchor(top: uuidLabel.bottomAnchor,
                           leading: view.leadingAnchor,
                           bottom: nil,
                           trailing: view.trailingAnchor,
-                          padding: .init(top: 32,
+                          padding: .init(top: 8,
                                          left: 24,
                                          bottom: 0,
                                          right: 24),

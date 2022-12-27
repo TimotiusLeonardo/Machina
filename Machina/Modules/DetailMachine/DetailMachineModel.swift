@@ -13,6 +13,7 @@ struct DetailMachineModel {
     var qrCodeNumber: String
     var lastMaintenanceDate: String
     var imageUrl: [String]
+    var uuid: String
     
     init(machine: Machine) {
         self.name = machine.name
@@ -20,5 +21,6 @@ struct DetailMachineModel {
         self.qrCodeNumber = machine.qrCodeNumber
         self.lastMaintenanceDate = machine.lastMaintenanceDate.convertToStringFormat()
         self.imageUrl = machine.imagesUrl.map({ $0 })
+        self.uuid = machine._id.stringValue
     }
 }
