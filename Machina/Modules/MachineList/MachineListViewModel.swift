@@ -79,4 +79,20 @@ class MachineListViewModel: BaseViewModelContract {
             Log("Error add machine: \(error)")
         }
     }
+    
+    func openMachineDetail(indexPath: IndexPath) -> DetailMachineViewController? {
+        guard let machines = machines, machines.count > indexPath.row else {
+            return nil
+        }
+        let machine = machines[indexPath.row]
+        let imageUrl: [String] = machine.imagesUrl.map { $0 }
+        let detailMachineViewData = DetailMachineModel(name: machine.name,
+                                                       type: machine.type,
+                                                       qrCodeNumber: machine.qrCodeNumber,
+                                                       lastMaintenanceDate: machine.lastMaintenanceDate,
+                                                       imageUrl: imageUrl)
+        let detailMachineViewModel = DetailMachineViewModel(viewData: detailMachineViewData)
+        let detailVC = DetailMachineViewController(viewModel: detailMachineViewModel)
+        return detailVC
+    }
 }

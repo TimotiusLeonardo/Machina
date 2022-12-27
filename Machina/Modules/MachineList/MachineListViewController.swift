@@ -61,7 +61,6 @@ class MachineListViewController: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
         createViews()
     }
     
@@ -129,8 +128,8 @@ extension MachineListViewController {
         alertView.addAction(UIAlertAction(title: "OK",
                                           style: .default,
                                           handler: { [weak self] _ in
-            guard let name = self?.nameInputTextField?.text,
-                  let type = self?.typeInputTextField?.text else {
+            guard let name = self?.nameInputTextField?.text, !name.isEmpty,
+                    let type = self?.typeInputTextField?.text, !type.isEmpty else {
                 // If one or two textfield is blank, dismiss the alertview and show warning alertview
                 alertView.dismiss(animated: true) {
                     self?.giveBlankTextfieldWarning()
@@ -187,6 +186,9 @@ extension MachineListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let detailVC = viewModel.openMachineDetail(indexPath: indexPath) {
+            present(detailVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

@@ -11,6 +11,9 @@
 		FF21E578295A7372008A8703 /* MachineListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E577295A7372008A8703 /* MachineListCell.swift */; };
 		FF21E57A295A77FA008A8703 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */; };
 		FF21E57C295A8EE9008A8703 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E57B295A8EE9008A8703 /* UIViewController+Extensions.swift */; };
+		FF21E57F295AA310008A8703 /* DetailMachineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E57E295AA310008A8703 /* DetailMachineViewModel.swift */; };
+		FF21E581295AA31C008A8703 /* DetailMachineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E580295AA31C008A8703 /* DetailMachineViewController.swift */; };
+		FF21E583295AA343008A8703 /* DetailMachineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E582295AA343008A8703 /* DetailMachineModel.swift */; };
 		FF66603A295948F400988F7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF666039295948F400988F7D /* Constants.swift */; };
 		FF66603D295955F400988F7D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603C295955F400988F7D /* Realm */; };
 		FF66603F295955F400988F7D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603E295955F400988F7D /* RealmSwift */; };
@@ -37,6 +40,9 @@
 		FF21E577295A7372008A8703 /* MachineListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListCell.swift; sourceTree = "<group>"; };
 		FF21E579295A77FA008A8703 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		FF21E57B295A8EE9008A8703 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FF21E57E295AA310008A8703 /* DetailMachineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMachineViewModel.swift; sourceTree = "<group>"; };
+		FF21E580295AA31C008A8703 /* DetailMachineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMachineViewController.swift; sourceTree = "<group>"; };
+		FF21E582295AA343008A8703 /* DetailMachineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMachineModel.swift; sourceTree = "<group>"; };
 		FF666039295948F400988F7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		FFA7E8EF295804E80069114E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -77,6 +83,16 @@
 				FF21E577295A7372008A8703 /* MachineListCell.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		FF21E57D295AA301008A8703 /* DetailMachine */ = {
+			isa = PBXGroup;
+			children = (
+				FF21E57E295AA310008A8703 /* DetailMachineViewModel.swift */,
+				FF21E580295AA31C008A8703 /* DetailMachineViewController.swift */,
+				FF21E582295AA343008A8703 /* DetailMachineModel.swift */,
+			);
+			path = DetailMachine;
 			sourceTree = "<group>";
 		};
 		FFA7E8EB295803C40069114E /* CustomViews */ = {
@@ -160,6 +176,7 @@
 		FFEA8FF52957465100E013A0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FF21E57D295AA301008A8703 /* DetailMachine */,
 				FFEA9005295767B900E013A0 /* MachineList */,
 				FFEA9000295766BE00E013A0 /* CodeReader */,
 				FFEA8FFF295766B300E013A0 /* Main */,
@@ -275,10 +292,12 @@
 			files = (
 				FFA7E8FE295818A20069114E /* UIApplication+Extensions.swift in Sources */,
 				FFA7E8F829580DBE0069114E /* BaseViewModelContract.swift in Sources */,
+				FF21E583295AA343008A8703 /* DetailMachineModel.swift in Sources */,
 				FFEA8FF829574F0200E013A0 /* MainViewModel.swift in Sources */,
 				FF21E5752959F5DE008A8703 /* MachineListModel.swift in Sources */,
 				FFA7E8F429580C990069114E /* BaseVC.swift in Sources */,
 				FFEA8FE22957459B00E013A0 /* AppDelegate.swift in Sources */,
+				FF21E581295AA31C008A8703 /* DetailMachineViewController.swift in Sources */,
 				FF21E57C295A8EE9008A8703 /* UIViewController+Extensions.swift in Sources */,
 				FF66603A295948F400988F7D /* Constants.swift in Sources */,
 				FF21E578295A7372008A8703 /* MachineListCell.swift in Sources */,
@@ -288,6 +307,7 @@
 				FFA7E8ED295803E30069114E /* CustomNavigationBar.swift in Sources */,
 				FFA7E8FB2958100E0069114E /* ViewState.swift in Sources */,
 				FFEA9002295766CF00E013A0 /* CodeReaderViewModel.swift in Sources */,
+				FF21E57F295AA310008A8703 /* DetailMachineViewModel.swift in Sources */,
 				FFEA9008295767F500E013A0 /* MachineListViewController.swift in Sources */,
 				FFEA8FE42957459B00E013A0 /* SceneDelegate.swift in Sources */,
 				FFEA9004295766E200E013A0 /* CodeReaderViewController.swift in Sources */,
