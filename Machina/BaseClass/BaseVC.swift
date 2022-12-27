@@ -10,7 +10,9 @@ import UIKit
 class BaseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.isHidden = true
+        tabBarController?.navigationController?.isNavigationBarHidden = true
+        tabBarController?.navigationController?.navigationBar.isHidden = true
     }
 }

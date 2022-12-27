@@ -35,6 +35,14 @@ class DetailMachineViewController: BaseVC {
         return view
     }()
     
+    private lazy var editButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Edit", for: .normal)
+        button.addTarget(self, action: #selector(onEditButtonTapped), for: .touchUpInside)
+        button.setTitleColor(.systemBlue, for: .normal)
+        return button
+    }()
+    
     private var machineTypeSection: DetailListView
     private var machineQrCodeNumberSection: DetailListView
     private var machineLastMaintenanceSection: DetailListView
@@ -62,6 +70,7 @@ class DetailMachineViewController: BaseVC {
         [navigationBar, statusBarView, titleLabel, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection].forEach { view in
             self.view.addSubview(view)
         }
+        navigationBar.configureToolbar([editButton])
         navigationBar.layoutIfNeeded()
         configureConstraints()
     }
@@ -111,6 +120,13 @@ class DetailMachineViewController: BaseVC {
                                           padding: .init(top: 8, left: 0, bottom: 0, right: 0))
         machineLastMaintenanceSection.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
         
+    }
+}
+
+// MARK: - OBJC functions
+extension DetailMachineViewController {
+    @objc func onEditButtonTapped() {
+        Log("on button tapped")
     }
 }
 

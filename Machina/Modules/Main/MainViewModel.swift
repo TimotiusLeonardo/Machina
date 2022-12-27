@@ -32,7 +32,7 @@ final class MainViewModel: BaseViewModelContract {
         let codeReaderViewController = CodeReaderViewController(viewModel: CodeReaderViewModel())
         codeReaderViewController.tabBarItem.title = "Code Reader"
         codeReaderViewController.tabBarItem.image = UIImage(systemName: "qrcode.viewfinder")
-        viewControllers.append(codeReaderViewController)
+        viewControllers.append(UINavigationController(rootViewController: codeReaderViewController))
         
         return viewControllers
     }

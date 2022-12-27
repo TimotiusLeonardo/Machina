@@ -28,7 +28,6 @@ class MainViewController: UITabBarController {
         tabBar.alpha = 0.8
         viewControllers = viewModel.tabBarViewControllers
         delegate = self
-        navigationController?.isNavigationBarHidden = true
     }
 }
 
