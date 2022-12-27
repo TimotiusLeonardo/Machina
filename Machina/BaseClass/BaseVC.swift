@@ -14,5 +14,6 @@ class BaseVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         tabBarController?.navigationController?.isNavigationBarHidden = true
         tabBarController?.navigationController?.navigationBar.isHidden = true
+        hideKeyboardWhenTappedAround()
     }
 }

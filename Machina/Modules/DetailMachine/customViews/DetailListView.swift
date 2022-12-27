@@ -8,18 +8,17 @@
 import UIKit
 
 class DetailListView: UIView {
-    lazy var titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .bold)
         label.textColor = .black
         return label
     }()
     
-    lazy var descriptionTextfield: UITextField = {
+    private lazy var descriptionTextfield: UITextField = {
         let textField = UITextField()
         textField.font = .systemFont(ofSize: 12, weight: .regular)
         textField.placeholder = "Description"
-        textField.isEnabled = false
         textField.textColor = .black
         return textField
     }()
@@ -43,18 +42,30 @@ class DetailListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func createViews() {
+    private func createViews() {
         [stackView].forEach { subview in
             addSubview(subview)
         }
-        
+        toggleTextFieldEnabled(to: false)
         configureConstraints()
     }
     
-    func configureConstraints() {
+    private func configureConstraints() {
         stackView.anchor(top: topAnchor,
                          leading: leadingAnchor,
                          bottom: bottomAnchor,
                          trailing: trailingAnchor)
+    }
+    
+    func toggleTextFieldEnabled(to state: Bool) {
+        descriptionTextfield.isEnabled = state
+        UIView.animate(withDuration: 0.2,
+                       delay: 0) {
+            self.descriptionTextfield.textColor = state ? .black : .lightGray
+        }
+    }
+    
+    func getValue() -> String? {
+        descriptionTextfield.text
     }
 }

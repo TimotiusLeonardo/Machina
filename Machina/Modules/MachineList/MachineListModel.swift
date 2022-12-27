@@ -24,3 +24,20 @@ class Machine: Object {
         self.qrCodeNumber = qrCodeNumber
     }
 }
+
+// Model to save object from delegate
+struct UpdatedMachineDataModel {
+    var name: String
+    var type: String
+    var lastMaintenanceDate: Date
+    var imagesUrl = List<String>()
+    
+    init(name: String, type: String, lastMaintenanceDate: Date, imagesUrl: [String] = []) {
+        self.name = name
+        self.type = type
+        self.lastMaintenanceDate = lastMaintenanceDate
+        for string in imagesUrl {
+            self.imagesUrl.append(string)
+        }
+    }
+}

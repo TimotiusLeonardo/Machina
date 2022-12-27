@@ -165,8 +165,10 @@ extension MachineListViewController: RequestProtocol {
             Log("Nothing to do")
         case .success(let onSuccess):
             onSuccess?()
+            tableView.reloadData()
         case .error(let onError):
             onError?()
+            tableView.reloadData()
         }
     }
 }

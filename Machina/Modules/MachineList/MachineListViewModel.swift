@@ -77,6 +77,7 @@ class MachineListViewModel: BaseViewModelContract {
             })
         } catch {
             Log("Error add machine: \(error)")
+            state = .error(nil)
         }
     }
     
@@ -90,9 +91,32 @@ class MachineListViewModel: BaseViewModelContract {
                                                        type: machine.type,
                                                        qrCodeNumber: machine.qrCodeNumber,
                                                        lastMaintenanceDate: machine.lastMaintenanceDate,
-                                                       imageUrl: imageUrl)
-        let detailMachineViewModel = DetailMachineViewModel(viewData: detailMachineViewData)
+                                                       imageUrl: imageUrl,
+                                                       itemIndexPath: indexPath)
+        let detailMachineViewModel = DetailMachineViewModel(viewData: detailMachineViewData, machineListUpdateDelegate: self)
         let detailVC = DetailMachineViewController(viewModel: detailMachineViewModel)
         return detailVC
+    }
+}
+
+extension MachineListViewModel: MachineListUpdateDelegate {
+    func saveMachineDetails(indexPath: IndexPath, updatedMachineModel: UpdatedMachineDataModel) {
+        guard let machines = machines, machines.count > indexPath.row else {
+            return
+        }
+        state = .loading
+        do {
+            let itemsToUpdate = machines[indexPath.row]
+            try realm?.write({
+                itemsToUpdate.name = updatedMachineModel.name
+                itemsToUpdate.type = updatedMachineModel.type
+                itemsToUpdate.imagesUrl = updatedMachineModel.imagesUrl
+                itemsToUpdate.lastMaintenanceDate = updatedMachineModel.lastMaintenanceDate
+                state = .success(nil)
+            })
+        } catch {
+            Log("Error add machine: \(error)")
+            state = .error(nil)
+        }
     }
 }

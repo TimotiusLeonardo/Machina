@@ -9,6 +9,7 @@ import UIKit
 
 class DetailMachineViewController: BaseVC {
     private var viewModel: DetailMachineViewModel
+    var isTextFieldEnabled = false
     
     lazy var navigationBar: CustomNavigationBar = {
         let navbar = CustomNavigationBar(title: "Details")
@@ -22,11 +23,11 @@ class DetailMachineViewController: BaseVC {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14, weight: .heavy)
-        label.textColor = .black
-        return label
+    private lazy var titleTextField: UITextField = {
+        let view = UITextField()
+        view.font = .systemFont(ofSize: 16, weight: .heavy)
+        view.textColor = .black
+        return view
     }()
     
     private lazy var dividerView: UIView = {
@@ -57,7 +58,7 @@ class DetailMachineViewController: BaseVC {
                                                        description: self.viewModel.viewData.lastMaintenanceDate)
         super.init(nibName: nil, bundle: nil)
         self.viewModel.requestDelegate = self
-        titleLabel.text = self.viewModel.viewData.name
+        titleTextField.text = self.viewModel.viewData.name
     }
     
     required init?(coder: NSCoder) {
@@ -67,11 +68,12 @@ class DetailMachineViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        [navigationBar, statusBarView, titleLabel, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection].forEach { view in
+        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection].forEach { view in
             self.view.addSubview(view)
         }
         navigationBar.configureToolbar([editButton])
         navigationBar.layoutIfNeeded()
+        toggleTitleTextFieldEnabled(to: false)
         configureConstraints()
     }
     
@@ -86,7 +88,7 @@ class DetailMachineViewController: BaseVC {
                              bottom: nil,
                              trailing: view.trailingAnchor,
                              size: .init(width: 0, height: UIApplication.statusBarHeight))
-        titleLabel.anchor(top: navigationBar.bottomAnchor,
+        titleTextField.anchor(top: navigationBar.bottomAnchor,
                           leading: view.leadingAnchor,
                           bottom: nil,
                           trailing: view.trailingAnchor,
@@ -95,7 +97,7 @@ class DetailMachineViewController: BaseVC {
                                          bottom: 0,
                                          right: 24),
                           size: .init(width: 0, height: 0))
-        dividerView.anchor(top: titleLabel.bottomAnchor,
+        dividerView.anchor(top: titleTextField.bottomAnchor,
                            leading: view.leadingAnchor,
                            bottom: nil,
                            trailing: view.trailingAnchor,
@@ -121,17 +123,56 @@ class DetailMachineViewController: BaseVC {
         machineLastMaintenanceSection.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
         
     }
+    
+    func saveMachineDetails() {
+        guard let type = machineTypeSection.getValue(), !type.isEmpty,
+              let maintenanceDate = machineLastMaintenanceSection.getValue(), !maintenanceDate.isEmpty,
+              let name = titleTextField.text, !name.isEmpty else {
+            Log("One or more field is empty")
+            return
+        }
+        viewModel.saveMachineDetail(name: name, type: type, maintenance: maintenanceDate, onSuccess: { [weak self] in
+            self?.dismiss(animated: true)
+        })
+    }
+    
+    func toggleTitleTextFieldEnabled(to state: Bool) {
+        titleTextField.isEnabled = state
+        UIView.animate(withDuration: 0.2,
+                       delay: 0) {
+            self.titleTextField.textColor = state ? .black : .lightGray
+        }
+    }
 }
 
 // MARK: - OBJC functions
 extension DetailMachineViewController {
     @objc func onEditButtonTapped() {
-        Log("on button tapped")
+        // Toggle textfield enabled
+        isTextFieldEnabled.toggle()
+        editButton.setTitle(isTextFieldEnabled ? "Save" : "Edit", for: .normal)
+        // if it save button, we will save the updated value
+        if !isTextFieldEnabled {
+            saveMachineDetails()
+        }
+        [machineTypeSection, machineLastMaintenanceSection].forEach { view in
+            view.toggleTextFieldEnabled(to: isTextFieldEnabled)
+        }
+        toggleTitleTextFieldEnabled(to: isTextFieldEnabled)
     }
 }
 
 extension DetailMachineViewController: RequestProtocol {
     func updateState(with state: ViewState) {
-        //
+        switch state {
+        case .idle:
+            Log("Nothing to do")
+        case .loading:
+            Log("Nothing to do")
+        case .success(let onSuccess):
+            onSuccess?()
+        case .error(let onError):
+            onError?()
+        }
     }
 }

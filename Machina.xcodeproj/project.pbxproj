@@ -16,6 +16,7 @@
 		FF21E583295AA343008A8703 /* DetailMachineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E582295AA343008A8703 /* DetailMachineModel.swift */; };
 		FF21E586295ABB30008A8703 /* DetailListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E585295ABB30008A8703 /* DetailListView.swift */; };
 		FF21E588295AC4B8008A8703 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E587295AC4B8008A8703 /* Date+Extensions.swift */; };
+		FF21E58B295AF24E008A8703 /* MachineListUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E58A295AF24E008A8703 /* MachineListUpdateDelegate.swift */; };
 		FF66603A295948F400988F7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF666039295948F400988F7D /* Constants.swift */; };
 		FF66603D295955F400988F7D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603C295955F400988F7D /* Realm */; };
 		FF66603F295955F400988F7D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603E295955F400988F7D /* RealmSwift */; };
@@ -47,6 +48,7 @@
 		FF21E582295AA343008A8703 /* DetailMachineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMachineModel.swift; sourceTree = "<group>"; };
 		FF21E585295ABB30008A8703 /* DetailListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListView.swift; sourceTree = "<group>"; };
 		FF21E587295AC4B8008A8703 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		FF21E58A295AF24E008A8703 /* MachineListUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListUpdateDelegate.swift; sourceTree = "<group>"; };
 		FF666039295948F400988F7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		FFA7E8EF295804E80069114E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 				FF21E585295ABB30008A8703 /* DetailListView.swift */,
 			);
 			path = customViews;
+			sourceTree = "<group>";
+		};
+		FF21E589295AF22B008A8703 /* contract */ = {
+			isa = PBXGroup;
+			children = (
+				FF21E58A295AF24E008A8703 /* MachineListUpdateDelegate.swift */,
+			);
+			path = contract;
 			sourceTree = "<group>";
 		};
 		FFA7E8EB295803C40069114E /* CustomViews */ = {
@@ -219,6 +229,7 @@
 		FFEA9005295767B900E013A0 /* MachineList */ = {
 			isa = PBXGroup;
 			children = (
+				FF21E589295AF22B008A8703 /* contract */,
 				FF21E576295A7353008A8703 /* cells */,
 				FFEA9006295767C700E013A0 /* MachineListViewModel.swift */,
 				FFEA9007295767C800E013A0 /* MachineListViewController.swift */,
@@ -325,6 +336,7 @@
 				FFEA9002295766CF00E013A0 /* CodeReaderViewModel.swift in Sources */,
 				FF21E57F295AA310008A8703 /* DetailMachineViewModel.swift in Sources */,
 				FFEA9008295767F500E013A0 /* MachineListViewController.swift in Sources */,
+				FF21E58B295AF24E008A8703 /* MachineListUpdateDelegate.swift in Sources */,
 				FFEA8FE42957459B00E013A0 /* SceneDelegate.swift in Sources */,
 				FFEA9004295766E200E013A0 /* CodeReaderViewController.swift in Sources */,
 				FFEA8FFC2957586000E013A0 /* MainViewController.swift in Sources */,
