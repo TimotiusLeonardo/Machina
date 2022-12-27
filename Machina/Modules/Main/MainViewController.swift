@@ -23,12 +23,12 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UITabBar.appearance().barTintColor = .systemBackground
-        tabBar.tintColor = .label
+        tabBar.tintColor = .white
         tabBar.backgroundColor = .lightGray
         tabBar.alpha = 0.8
         viewControllers = viewModel.tabBarViewControllers
         delegate = self
+        navigationController?.isNavigationBarHidden = true
     }
 }
 

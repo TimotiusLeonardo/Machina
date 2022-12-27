@@ -17,6 +17,7 @@ class CustomNavigationBar: UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .black)
         label.numberOfLines = 0
+        label.textColor = .white
         return label
     }()
     
