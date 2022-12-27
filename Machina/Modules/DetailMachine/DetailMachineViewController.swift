@@ -141,7 +141,11 @@ class DetailMachineViewController: BaseVC {
             return
         }
         viewModel.saveMachineDetail(name: name, type: type, maintenance: maintenanceDate, onSuccess: { [weak self] in
-            self?.dismiss(animated: true)
+            if self?.navigationController != nil {
+                self?.navigationController?.popViewController(animated: true)
+            } else {
+                self?.dismiss(animated: true)
+            }
         })
     }
     

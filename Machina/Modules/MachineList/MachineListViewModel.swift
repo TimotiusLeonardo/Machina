@@ -86,37 +86,14 @@ class MachineListViewModel: BaseViewModelContract {
             return nil
         }
         let machine = machines[indexPath.row]
-        let imageUrl: [String] = machine.imagesUrl.map { $0 }
-        let detailMachineViewData = DetailMachineModel(name: machine.name,
-                                                       type: machine.type,
-                                                       qrCodeNumber: machine.qrCodeNumber,
-                                                       lastMaintenanceDate: machine.lastMaintenanceDate,
-                                                       imageUrl: imageUrl,
-                                                       itemIndexPath: indexPath)
-        let detailMachineViewModel = DetailMachineViewModel(viewData: detailMachineViewData, machineListUpdateDelegate: self)
+        let detailMachineViewModel = DetailMachineViewModel(machine: machine, machineListUpdateDelegate: self)
         let detailVC = DetailMachineViewController(viewModel: detailMachineViewModel)
         return detailVC
     }
 }
 
 extension MachineListViewModel: MachineListUpdateDelegate {
-    func saveMachineDetails(indexPath: IndexPath, updatedMachineModel: UpdatedMachineDataModel) {
-        guard let machines = machines, machines.count > indexPath.row else {
-            return
-        }
-        state = .loading
-        do {
-            let itemsToUpdate = machines[indexPath.row]
-            try realm?.write({
-                itemsToUpdate.name = updatedMachineModel.name
-                itemsToUpdate.type = updatedMachineModel.type
-                itemsToUpdate.imagesUrl = updatedMachineModel.imagesUrl
-                itemsToUpdate.lastMaintenanceDate = updatedMachineModel.lastMaintenanceDate
-                state = .success(nil)
-            })
-        } catch {
-            Log("Error add machine: \(error)")
-            state = .error(nil)
-        }
+    func saveMachineDetails() {
+        state = .success(nil)
     }
 }

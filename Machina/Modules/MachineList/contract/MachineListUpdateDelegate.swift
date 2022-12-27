@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MachineListUpdateDelegate: AnyObject {
-    func saveMachineDetails(indexPath: IndexPath, updatedMachineModel: UpdatedMachineDataModel)
+    func saveMachineDetails()
 }

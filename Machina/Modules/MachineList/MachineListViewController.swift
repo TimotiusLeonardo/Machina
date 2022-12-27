@@ -64,6 +64,11 @@ class MachineListViewController: BaseVC {
         createViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
+    
     func createViews() {
         [navigationBar, statusBarView, tableView].forEach { view in
             self.view.addSubview(view)

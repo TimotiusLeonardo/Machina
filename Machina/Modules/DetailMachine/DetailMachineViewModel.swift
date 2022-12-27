@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class DetailMachineViewModel: BaseViewModelContract {
     enum UpdatedState {
@@ -21,10 +22,13 @@ class DetailMachineViewModel: BaseViewModelContract {
     weak var requestDelegate: RequestProtocol?
     weak var machineListUpdateDelegate: MachineListUpdateDelegate?
     var viewData: DetailMachineModel
+    var machine: Machine?
+    lazy var realm = try? Realm()
     
-    init(viewData: DetailMachineModel, machineListUpdateDelegate: MachineListUpdateDelegate? = nil) {
-        self.viewData = viewData
+    init(machine: Machine, machineListUpdateDelegate: MachineListUpdateDelegate? = nil) {
+        self.viewData = DetailMachineModel(machine: machine)
         self.machineListUpdateDelegate = machineListUpdateDelegate
+        self.machine = machine
     }
     
     func saveMachineDetail(name: String, type: String, maintenance: String, onSuccess: @escaping onSuccess) {
@@ -32,8 +36,24 @@ class DetailMachineViewModel: BaseViewModelContract {
         let convertedDate = Date.convertStringToDate(string: maintenance)
         
         let updatedMachineDataModel = UpdatedMachineDataModel(name: name, type: type, lastMaintenanceDate: convertedDate, imagesUrl: [])
-        machineListUpdateDelegate?.saveMachineDetails(indexPath: viewData.itemIndexPath,
-                                                                updatedMachineModel: updatedMachineDataModel)
-        state = .success(onSuccess)
+        
+        // We will use save method from this module.
+        do {
+            try realm?.write({
+                machine?.name = updatedMachineDataModel.name
+                machine?.type = updatedMachineDataModel.type
+                machine?.imagesUrl = updatedMachineDataModel.imagesUrl
+                machine?.lastMaintenanceDate = updatedMachineDataModel.lastMaintenanceDate
+                machineListUpdateDelegate?.saveMachineDetails()
+                state = .success(onSuccess)
+            })
+        } catch {
+            Log("Error add machine: \(error)")
+            state = .error(nil)
+        }
+    }
+    
+    func saveMachineToRealm() {
+        
     }
 }

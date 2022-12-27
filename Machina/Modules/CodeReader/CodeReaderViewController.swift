@@ -129,7 +129,16 @@ class CodeReaderViewController: BaseVC {
 
 extension CodeReaderViewController: RequestProtocol {
     func updateState(with state: ViewState) {
-        //
+        switch state {
+        case .idle:
+            Log("Nothing to do")
+        case .loading:
+            Log("Nothin to do")
+        case .success(let onSuccess):
+            onSuccess?()
+        case .error(let onError):
+            onError?()
+        }
     }
 }
 
@@ -148,11 +157,13 @@ extension CodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
     func found(code: String) {
         Log(code)
         
-        if code.contains("x") {
-            showFoundCodeAlertView(isError: true)
-        } else {
-            showFoundCodeAlertView(isError: false)
+        viewModel.checkCodeAvailability(code) { [weak self] in
+            guard let detailVC = self?.viewModel.createDetailViewController() else { return }
+            self?.navigationController?.pushViewController(detailVC, animated: true)
+        } onError: { [weak self] in
+            self?.showFoundCodeAlertView(isError: true)
         }
+
     }
     
     func showFoundCodeAlertView(isError: Bool) {
