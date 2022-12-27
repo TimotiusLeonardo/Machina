@@ -11,6 +11,14 @@ struct DetailMachineModel {
     var name: String
     var type: String
     var qrCodeNumber: String
-    var lastMaintenanceDate: Date
+    var lastMaintenanceDate: String
     var imageUrl: [String]
+    
+    init(name: String, type: String, qrCodeNumber: String, lastMaintenanceDate: Date, imageUrl: [String]) {
+        self.name = name
+        self.type = type
+        self.qrCodeNumber = qrCodeNumber
+        self.lastMaintenanceDate = lastMaintenanceDate.convertToStringFormat()
+        self.imageUrl = imageUrl
+    }
 }

@@ -22,10 +22,34 @@ class DetailMachineViewController: BaseVC {
         return view
     }()
     
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14, weight: .heavy)
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var dividerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
+    
+    private var machineTypeSection: DetailListView
+    private var machineQrCodeNumberSection: DetailListView
+    private var machineLastMaintenanceSection: DetailListView
+    
     required init(viewModel: BaseViewModelContract) {
         self.viewModel = viewModel as! DetailMachineViewModel
+        machineTypeSection = DetailListView(title: "Type",
+                                            description: self.viewModel.viewData.type)
+        machineQrCodeNumberSection = DetailListView(title: "QR Number",
+                                             description: self.viewModel.viewData.qrCodeNumber)
+        machineLastMaintenanceSection = DetailListView(title: "Last Maintanance",
+                                                       description: self.viewModel.viewData.lastMaintenanceDate)
         super.init(nibName: nil, bundle: nil)
         self.viewModel.requestDelegate = self
+        titleLabel.text = self.viewModel.viewData.name
     }
     
     required init?(coder: NSCoder) {
@@ -35,7 +59,7 @@ class DetailMachineViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        [navigationBar, statusBarView].forEach { view in
+        [navigationBar, statusBarView, titleLabel, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection].forEach { view in
             self.view.addSubview(view)
         }
         navigationBar.layoutIfNeeded()
@@ -53,6 +77,40 @@ class DetailMachineViewController: BaseVC {
                              bottom: nil,
                              trailing: view.trailingAnchor,
                              size: .init(width: 0, height: UIApplication.statusBarHeight))
+        titleLabel.anchor(top: navigationBar.bottomAnchor,
+                          leading: view.leadingAnchor,
+                          bottom: nil,
+                          trailing: view.trailingAnchor,
+                          padding: .init(top: 32,
+                                         left: 24,
+                                         bottom: 0,
+                                         right: 24),
+                          size: .init(width: 0, height: 0))
+        dividerView.anchor(top: titleLabel.bottomAnchor,
+                           leading: view.leadingAnchor,
+                           bottom: nil,
+                           trailing: view.trailingAnchor,
+                           padding: .init(top: 4, left: 0, bottom: 0, right: 0),
+                           size: .init(width: 0, height: 2))
+        machineTypeSection.anchor(top: dividerView.bottomAnchor,
+                                  leading: view.leadingAnchor,
+                                  bottom: nil,
+                                  trailing: view.trailingAnchor,
+                                  padding: .init(top: 32, left: 24, bottom: 0, right: 24))
+        machineTypeSection.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        machineQrCodeNumberSection.anchor(top: machineTypeSection.bottomAnchor,
+                                  leading: machineTypeSection.leadingAnchor,
+                                  bottom: nil,
+                                  trailing: machineTypeSection.trailingAnchor,
+                                  padding: .init(top: 8, left: 0, bottom: 0, right: 0))
+        machineQrCodeNumberSection.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        machineLastMaintenanceSection.anchor(top: machineQrCodeNumberSection.bottomAnchor,
+                                          leading: machineQrCodeNumberSection.leadingAnchor,
+                                          bottom: nil,
+                                          trailing: machineQrCodeNumberSection.trailingAnchor,
+                                          padding: .init(top: 8, left: 0, bottom: 0, right: 0))
+        machineLastMaintenanceSection.heightAnchor.constraint(greaterThanOrEqualToConstant: 0).isActive = true
+        
     }
 }
 
