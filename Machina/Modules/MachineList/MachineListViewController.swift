@@ -44,6 +44,9 @@ class MachineListViewController: BaseVC {
         return button
     }()
     
+    private var nameInputTextField: UITextField?
+    private var typeInputTextField: UITextField?
+    
     required init(viewModel: BaseViewModelContract) {
         self.viewModel = viewModel as! MachineListViewModel
         super.init(nibName: nil, bundle: nil)
@@ -89,6 +92,18 @@ class MachineListViewController: BaseVC {
         sortButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
         addButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
     }
+    
+    func giveBlankTextfieldWarning() {
+        let alertView = viewModel.createAlertView(title: "Blank Field",
+                                                  message: "There are one or more blank field, please fill complete it first")
+        alertView.addAction(.init(title: "OK", style: .default, handler: { _ in
+            alertView.dismiss(animated: true) {
+                self.onAddButtonTapped()
+            }
+        }))
+        
+        present(alertView, animated: true)
+    }
 }
 
 // MARK: - OBJC functions
@@ -98,11 +113,45 @@ extension MachineListViewController {
     }
     
     @objc func onAddButtonTapped() {
-        viewModel.addMachine { [weak self] in
-            self?.tableView.reloadData()
-        } onError: {
-            // Nothing to do
+        let alertView = viewModel.createAlertView(title: "Add Your Machine", message: "Please fill in the blanks to add your machine")
+        alertView.addTextField { [weak self] textField in
+            self?.nameInputTextField = textField
+            textField.placeholder = "Name"
         }
+        
+        alertView.addTextField { [weak self] textfield in
+            self?.typeInputTextField = textfield
+            textfield.placeholder = "Type"
+        }
+        
+        alertView.addAction(UIAlertAction(title: "OK",
+                                          style: .default,
+                                          handler: { [weak self] _ in
+            guard let name = self?.nameInputTextField?.text,
+                  let type = self?.typeInputTextField?.text else {
+                // If one or two textfield is blank, dismiss the alertview and show warning alertview
+                alertView.dismiss(animated: true) {
+                    self?.giveBlankTextfieldWarning()
+                }
+                return
+            }
+            
+            self?.viewModel.addMachine(onSuccess: {
+                self?.tableView.reloadData()
+            }, onError: {
+                // Nothing to do
+            }, name: name, type: type)
+            self?.nameInputTextField?.text = nil
+            self?.typeInputTextField?.text = nil
+        }))
+        
+        alertView.addAction(UIAlertAction(title: "Cancel",
+                                          style: .cancel,
+                                          handler: { _ in
+            alertView.dismiss(animated: true)
+        }))
+        
+        present(alertView, animated: true)
     }
 }
 

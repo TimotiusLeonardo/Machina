@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 class MachineListViewModel: BaseViewModelContract {
     weak var requestDelegate: RequestProtocol?
@@ -27,8 +28,19 @@ class MachineListViewModel: BaseViewModelContract {
         state = .success(onSuccess)
     }
     
-    func addMachine(onSuccess: @escaping onSuccess, onError: @escaping onError) {
-        let machine = Machine(name: "Timotius", type: "Otomotif", qrCodeNumber: "12345")
+    func createAlertView(title: String, message: String) -> UIAlertController {
+        let alertView = UIAlertController(title: title,
+                                          message: message,
+                                          preferredStyle: .alert)
+        return alertView
+    }
+    
+    func addMachine(onSuccess: @escaping onSuccess,
+                    onError: @escaping onError,
+                    name: String,
+                    type: String
+    ) {
+        let machine = Machine(name: name, type: type, qrCodeNumber: "\(Int(Date().timeIntervalSince1970))")
         
         do {
             try realm?.write({

@@ -14,9 +14,10 @@ class MachineListCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
         imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true
-        imageView.image = UIImage(named: "testGambar")
+        imageView.image = UIImage(systemName: "gearshape.circle.fill")
         return imageView
     }()
     
@@ -47,6 +48,7 @@ class MachineListCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [machineImageView, verticalStackView])
         stackView.spacing = 16
         stackView.distribution = .fillProportionally
+        stackView.alignment = .center
         stackView.axis = .horizontal
         return stackView
     }()
@@ -79,12 +81,6 @@ class MachineListCell: UITableViewCell {
     
     func setupCells(data: Machine?) {
         titleLabel.text = data?.name
-        idLabel.text = data?.qrCodeNumber
-        
-//        if data?.imagesUrl.isEmpty == true {
-//            machineImageView.isHidden = true
-//        } else {
-//            machineImageView.isHidden = false
-//        }
+        idLabel.text = data?.type
     }
 }
