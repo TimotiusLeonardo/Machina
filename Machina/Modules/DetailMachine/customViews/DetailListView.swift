@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol DetailListViewDelegate: AnyObject {
+    func onUpdatedTextFieldValue()
+}
+
 class DetailListView: UIView {
+    weak var delegate: DetailListViewDelegate?
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .bold)
@@ -20,6 +26,7 @@ class DetailListView: UIView {
         textField.font = .systemFont(ofSize: 12, weight: .regular)
         textField.placeholder = "Description"
         textField.textColor = .black
+        textField.addTarget(self, action: #selector(onTextFieldChanged), for: .editingChanged)
         return textField
     }()
     
@@ -67,5 +74,9 @@ class DetailListView: UIView {
     
     func getValue() -> String? {
         descriptionTextfield.text
+    }
+    
+    @objc func onTextFieldChanged() {
+        delegate?.onUpdatedTextFieldValue()
     }
 }

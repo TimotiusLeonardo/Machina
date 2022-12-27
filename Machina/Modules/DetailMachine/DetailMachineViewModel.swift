@@ -8,6 +8,11 @@
 import Foundation
 
 class DetailMachineViewModel: BaseViewModelContract {
+    enum UpdatedState {
+        case updated
+        case noUpdate
+    }
+    
     var state: ViewState = .idle {
         didSet {
             requestDelegate?.updateState(with: state)

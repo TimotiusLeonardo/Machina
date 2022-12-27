@@ -10,6 +10,11 @@ import UIKit
 class DetailMachineViewController: BaseVC {
     private var viewModel: DetailMachineViewModel
     var isTextFieldEnabled = false
+    var updateState: DetailMachineViewModel.UpdatedState = .noUpdate {
+        didSet {
+            configureSaveButton()
+        }
+    }
     
     lazy var navigationBar: CustomNavigationBar = {
         let navbar = CustomNavigationBar(title: "Details")
@@ -27,6 +32,7 @@ class DetailMachineViewController: BaseVC {
         let view = UITextField()
         view.font = .systemFont(ofSize: 16, weight: .heavy)
         view.textColor = .black
+        view.addTarget(self, action: #selector(onTextFieldUpdated), for: .editingChanged)
         return view
     }()
     
@@ -59,6 +65,9 @@ class DetailMachineViewController: BaseVC {
         super.init(nibName: nil, bundle: nil)
         self.viewModel.requestDelegate = self
         titleTextField.text = self.viewModel.viewData.name
+        machineTypeSection.delegate = self
+        machineLastMaintenanceSection.delegate = self
+        machineLastMaintenanceSection.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -143,6 +152,19 @@ class DetailMachineViewController: BaseVC {
             self.titleTextField.textColor = state ? .black : .lightGray
         }
     }
+    
+    func configureSaveButton() {
+        var title: String {
+            if isTextFieldEnabled && updateState == .updated { return "Save"}
+            if isTextFieldEnabled && updateState == .noUpdate {
+                editButton.setTitleColor(.red, for: .normal)
+                return "Cancel"
+            }
+            return "Edit"
+        }
+        editButton.setTitleColor(.systemBlue, for: .normal)
+        editButton.setTitle(title, for: .normal)
+    }
 }
 
 // MARK: - OBJC functions
@@ -150,15 +172,20 @@ extension DetailMachineViewController {
     @objc func onEditButtonTapped() {
         // Toggle textfield enabled
         isTextFieldEnabled.toggle()
-        editButton.setTitle(isTextFieldEnabled ? "Save" : "Edit", for: .normal)
+        configureSaveButton()
         // if it save button, we will save the updated value
-        if !isTextFieldEnabled {
+        if updateState == .updated {
             saveMachineDetails()
         }
+        
         [machineTypeSection, machineLastMaintenanceSection].forEach { view in
             view.toggleTextFieldEnabled(to: isTextFieldEnabled)
         }
         toggleTitleTextFieldEnabled(to: isTextFieldEnabled)
+    }
+    
+    @objc func onTextFieldUpdated() {
+        updateState = .updated
     }
 }
 
@@ -174,5 +201,11 @@ extension DetailMachineViewController: RequestProtocol {
         case .error(let onError):
             onError?()
         }
+    }
+}
+
+extension DetailMachineViewController: DetailListViewDelegate {
+    func onUpdatedTextFieldValue() {
+        updateState = .updated
     }
 }
