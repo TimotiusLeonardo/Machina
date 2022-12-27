@@ -132,23 +132,23 @@ extension MachineListViewController {
         
         alertView.addAction(UIAlertAction(title: "OK",
                                           style: .default,
-                                          handler: { [weak self] _ in
-            guard let name = self?.nameInputTextField?.text, !name.isEmpty,
-                    let type = self?.typeInputTextField?.text, !type.isEmpty else {
+                                          handler: { _ in
+            guard let name = self.nameInputTextField?.text, !name.isEmpty,
+                    let type = self.typeInputTextField?.text, !type.isEmpty else {
                 // If one or two textfield is blank, dismiss the alertview and show warning alertview
                 alertView.dismiss(animated: true) {
-                    self?.giveBlankTextfieldWarning()
+                    self.giveBlankTextfieldWarning()
                 }
                 return
             }
             
-            self?.viewModel.addMachine(onSuccess: {
+            self.viewModel.addMachine(onSuccess: { [weak self] in
                 self?.tableView.reloadData()
             }, onError: {
                 // Nothing to do
             }, name: name, type: type)
-            self?.nameInputTextField?.text = nil
-            self?.typeInputTextField?.text = nil
+            self.nameInputTextField?.text = nil
+            self.typeInputTextField?.text = nil
         }))
         
         alertView.addAction(UIAlertAction(title: "Cancel",

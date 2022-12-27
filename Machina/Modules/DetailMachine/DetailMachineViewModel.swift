@@ -8,6 +8,7 @@
 import Foundation
 import RealmSwift
 import Photos
+import UIKit
 
 class DetailMachineViewModel: BaseViewModelContract {
     enum UpdatedState {
@@ -37,15 +38,15 @@ class DetailMachineViewModel: BaseViewModelContract {
         // convert string to date
         let convertedDate = Date.convertStringToDate(string: maintenance)
         
-        let updatedMachineDataModel = UpdatedMachineDataModel(name: name, type: type, lastMaintenanceDate: convertedDate, imagesUrl: viewData.imageUrl)
-        
         // We will use save method from this module.
         do {
             try realm?.write({
-                machine?.name = updatedMachineDataModel.name
-                machine?.type = updatedMachineDataModel.type
-                machine?.imagesUrl = updatedMachineDataModel.imagesUrl
-                machine?.lastMaintenanceDate = updatedMachineDataModel.lastMaintenanceDate
+                machine?.name = name
+                machine?.type = type
+                for image in viewData.images {
+                    machine?.images.append(image as Data)
+                }
+                machine?.lastMaintenanceDate = convertedDate
                 machineListUpdateDelegate?.saveMachineDetails()
                 state = .success(onSuccess)
             })
@@ -58,22 +59,21 @@ class DetailMachineViewModel: BaseViewModelContract {
     func saveSelectedImageUrl(assets: [PHAsset], onSuccess: @escaping onSuccess) {
         for asset in assets {
             selectedStringDispatchGroup.enter()
-            getImageUrlFrom(asset) { url in
-                self.viewData.imageUrl.append(url)
+            let manager = PHImageManager.default()
+            let option = PHImageRequestOptions()
+            var thumbnail = UIImage()
+            option.isSynchronous = true
+            manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: option, resultHandler: {(result, info) -> Void in
+                thumbnail = result!
+                guard let pngData = UIImage.pngData(thumbnail)() else { return }
+                let dataPNGImg = NSData(data: pngData)
+                self.viewData.images.append(dataPNGImg)
                 self.selectedStringDispatchGroup.leave()
-            }
+            })
         }
         
         selectedStringDispatchGroup.notify(queue: .main) {
             self.state = .success(onSuccess)
-        }
-    }
-    
-    private func getImageUrlFrom(_ asset: PHAsset, onSuccess: @escaping (String) -> Void) {
-        asset.requestContentEditingInput(with: PHContentEditingInputRequestOptions()) { (editingInput, info) in
-            if let input = editingInput, let imgURL = input.fullSizeImageURL {
-                onSuccess(imgURL.absoluteString)
-            }
         }
     }
 }

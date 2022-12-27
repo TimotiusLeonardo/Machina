@@ -15,29 +15,12 @@ class Machine: Object {
     @Persisted var type: String = ""
     @Persisted var qrCodeNumber: String = ""
     @Persisted var lastMaintenanceDate: Date = Date()
-    @Persisted var imagesUrl = List<String>()
+    @Persisted var images = List<Data>()
     
     convenience init(name: String, type: String, qrCodeNumber: String) {
         self.init()
         self.name = name
         self.type = type
         self.qrCodeNumber = qrCodeNumber
-    }
-}
-
-// Model to save object from delegate
-struct UpdatedMachineDataModel {
-    var name: String
-    var type: String
-    var lastMaintenanceDate: Date
-    var imagesUrl = List<String>()
-    
-    init(name: String, type: String, lastMaintenanceDate: Date, imagesUrl: [String] = []) {
-        self.name = name
-        self.type = type
-        self.lastMaintenanceDate = lastMaintenanceDate
-        for string in imagesUrl {
-            self.imagesUrl.append(string)
-        }
     }
 }

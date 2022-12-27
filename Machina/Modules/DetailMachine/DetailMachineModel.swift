@@ -12,7 +12,7 @@ struct DetailMachineModel {
     var type: String
     var qrCodeNumber: String
     var lastMaintenanceDate: String
-    var imageUrl: [String]
+    var images: [NSData]
     var uuid: String
     
     init(machine: Machine) {
@@ -20,7 +20,9 @@ struct DetailMachineModel {
         self.type = machine.type
         self.qrCodeNumber = machine.qrCodeNumber
         self.lastMaintenanceDate = machine.lastMaintenanceDate.convertToStringFormat()
-        self.imageUrl = machine.imagesUrl.map({ $0 })
+        self.images = machine.images.map({ data in
+            NSData(data: data)
+        })
         self.uuid = machine._id.stringValue
     }
 }

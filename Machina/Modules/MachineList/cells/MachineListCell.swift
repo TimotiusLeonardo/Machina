@@ -82,5 +82,7 @@ class MachineListCell: UITableViewCell {
     func setupCells(data: Machine?) {
         titleLabel.text = data?.name
         idLabel.text = data?.type
+        Log("Image: \(data!.images.first!)")
+        machineImageView.image = UIImage(data: data?.images.first ?? Data())
     }
 }

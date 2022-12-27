@@ -24,7 +24,15 @@ class MachineListViewModel: BaseViewModelContract {
             }
         }
     }
-    var realm = try? Realm()
+    var realm: Realm? = {
+        do {
+            return try Realm()
+        } catch {
+            Log("Error: \(error.localizedDescription)")
+        }
+        
+        return nil
+    }()
     var sortMachineBy: SortType = .none
     var machines: Results<Machine>? {
         get {
