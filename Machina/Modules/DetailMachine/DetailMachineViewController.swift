@@ -92,6 +92,20 @@ class DetailMachineViewController: BaseVC {
         return button
     }()
     
+    private lazy var machineImageCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        // set a standard item size of 60 * 60
+        layout.itemSize = CGSize(width: 100, height: 100)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.collectionViewLayout = layout
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(DetailMachineImageCollectionViewCell.self, forCellWithReuseIdentifier: DetailMachineImageCollectionViewCell.identifier)
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
     private var machineTypeSection: DetailListView
     private var machineQrCodeNumberSection: DetailListView
     private var machineLastMaintenanceSection: DetailListView
@@ -121,7 +135,7 @@ class DetailMachineViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection, uuidLabel, machineImageButton].forEach { view in
+        [navigationBar, statusBarView, titleTextField, dividerView, machineTypeSection, machineQrCodeNumberSection, machineLastMaintenanceSection, uuidLabel, machineImageButton, machineImageCollectionView].forEach { view in
             self.view.addSubview(view)
         }
         navigationBar.configureToolbar([editButton])
@@ -189,6 +203,12 @@ class DetailMachineViewController: BaseVC {
                                   trailing: nil,
                                   padding: .init(top: 32, left: 0, bottom: 0, right: 0),
                                   size: .init(width: 0, height: 0))
+        machineImageCollectionView.anchor(top: machineImageButton.bottomAnchor,
+                                          leading: view.leadingAnchor,
+                                          bottom: nil,
+                                          trailing: view.trailingAnchor,
+                                          padding: .init(top: 32, left: 24, bottom: 0, right: 24),
+                                          size: .init(width: 0, height: 100))
         
     }
     
@@ -294,5 +314,21 @@ extension DetailMachineViewController: OpalImagePickerControllerDelegate, UINavi
             self?.updateState = .updated
             self?.imageGalleryPicker.dismiss(animated: true)
         })
+    }
+}
+
+extension DetailMachineViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.viewData.images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailMachineImageCollectionViewCell.identifier, for: indexPath) as? DetailMachineImageCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let data = viewModel.viewData.images[indexPath.row] as Data
+        cell.setup(image: UIImage(data: data))
+        
+        return cell
     }
 }

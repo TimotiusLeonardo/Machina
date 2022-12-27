@@ -82,7 +82,10 @@ class MachineListCell: UITableViewCell {
     func setupCells(data: Machine?) {
         titleLabel.text = data?.name
         idLabel.text = data?.type
-        Log("Image: \(data!.images.first!)")
-        machineImageView.image = UIImage(data: data?.images.first ?? Data())
+        if let customImageData = data?.images.first {
+            machineImageView.image = UIImage(data: customImageData)
+        } else {
+            machineImageView.image = UIImage(systemName: "gearshape.circle.fill")
+        }
     }
 }
