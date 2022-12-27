@@ -20,6 +20,7 @@ class MachineListViewController: BaseVC {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .white
+        tableView.register(MachineListCell.self, forCellReuseIdentifier: MachineListCell.identifier)
         return tableView
     }()
     private lazy var statusBarView: UIView = {
@@ -126,9 +127,11 @@ extension MachineListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .white
-        return cell
+        guard let machineListCell = tableView.dequeueReusableCell(withIdentifier: MachineListCell.identifier, for: indexPath) as? MachineListCell else {
+            return UITableViewCell()
+        }
+        machineListCell.setupCells(data: viewModel.machines?[indexPath.row])
+        return machineListCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
