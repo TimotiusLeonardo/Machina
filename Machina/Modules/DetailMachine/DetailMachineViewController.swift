@@ -312,6 +312,7 @@ extension DetailMachineViewController: OpalImagePickerControllerDelegate, UINavi
         viewModel.saveSelectedImageUrl(assets: assets, onSuccess: { [weak self] in
             // TODO: Show pictures
             self?.updateState = .updated
+            self?.machineImageCollectionView.reloadData()
             self?.imageGalleryPicker.dismiss(animated: true)
         })
     }
