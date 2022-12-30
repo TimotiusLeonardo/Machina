@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6503A1ADD46CB5B7AA1C7EB7004560E7"
-               BuildableName = "Pods_Machina.framework"
-               BlueprintName = "Pods-Machina"
+               BlueprintIdentifier = "917BEAA207549C6D8C27E1301CB7CEE3"
+               BuildableName = "Pods_Machinas.framework"
+               BlueprintName = "Pods-Machinas"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

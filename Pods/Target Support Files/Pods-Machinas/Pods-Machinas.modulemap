@@ -1,0 +1,6 @@
+framework module Pods_Machinas {
+  umbrella header "Pods-Machinas-umbrella.h"
+
+  export *
+  module * { export * }
+}

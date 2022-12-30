@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05D8AAE0D9EFA08F5376FBD5C71CB4A2 /* Pods-Machinas-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C646C3824DDB47C8D6AF24BB3F6EC069 /* Pods-Machinas-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AB0D41CAC7FB368B357989E49DED6BB /* OpalImagePickerRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F75E715990B4468417DC9028BBABF1 /* OpalImagePickerRootViewController.swift */; };
+		3DE4C15A32DC4AAA134DD2F7884C4EAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		45F931E27068F407411AB97EBA6062D7 /* OpalImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBB5BC68AB64F02EB2588E747BEB86 /* OpalImagePickerController.swift */; };
 		4B6B03385F28A2497A7140EEE4D871A6 /* Bundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5398B67E19FC99FE8A02E19BEA346E3A /* Bundle+Helper.swift */; };
-		52523DE37BB6706C9DE828C90A61CBA3 /* Pods-Machina-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D710C88DF2DF5E3A8DCB6B9C6C05FC /* Pods-Machina-dummy.m */; };
 		56A66928C7572DEE5C0647491C97B56C /* TimeInterval+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868C49531223D2B2402CBD32D66EEF93 /* TimeInterval+String.swift */; };
+		677568E704F2E0062ED67A71BF6D2A88 /* Pods-Machinas-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7B46713D95A9B64D8E5FD7CAD76FD2 /* Pods-Machinas-dummy.m */; };
 		728CD1A26C49670E6638FA19AC10FC04 /* OpalImagePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 273187BBA19213C4D8510D2BAEA6FCCC /* OpalImagePicker-dummy.m */; };
-		818C67B541697A7634412DFE294AC5BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		8916A7DBD915AB122AAC6DE16109B218 /* OpalImagePickerCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0C849A9ABFC590EFF2935FCE30951 /* OpalImagePickerCollectionViewLayout.swift */; };
 		8CAEF5423A0FB0555C8FE8BBAA80BCF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		92A87BAE27C08BC50BDD006E5572F10F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EC27FC49E35ADF2089DF1C7332C09ED /* Assets.xcassets */; };
-		A65440672B555F566C9CE4995FE0C353 /* OpalImagePickerResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 598756CCCB40FC98DA122084B3B8C925 /* OpalImagePickerResources.bundle */; };
+		A65440672B555F566C9CE4995FE0C353 /* OpalImagePicker-OpalImagePickerResources in Resources */ = {isa = PBXBuildFile; fileRef = 598756CCCB40FC98DA122084B3B8C925 /* OpalImagePicker-OpalImagePickerResources */; };
 		ABBFF480AA1F6216C1A288F096C6D963 /* OpalImagePickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF49671D1047E60D4F5BFC8175BD8933 /* OpalImagePickerConfiguration.swift */; };
 		AF156256588FB9B887728C18C6FD6B59 /* UIViewController+OpalImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A4CBE7EBB78FDA74B9B4E16F3DF2AD /* UIViewController+OpalImagePicker.swift */; };
 		B4180ABCACAF8D2A681C09BEFC74CF41 /* ImagePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4089F2F3DEAF5BA9ED536CFE11B8B /* ImagePickerCollectionViewCell.swift */; };
 		CAD76A483D082ECBB29B0BE9906B3712 /* OpalImagePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 700C8B37E3C4A8947D7E27811BCD04F5 /* OpalImagePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E24C0B725094E3BB1048C5B589332F2D /* UIView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58959F9B3E6FAE4D8F96A49328FAEAD5 /* UIView+Helper.swift */; };
-		F8178BB9304A71567501089BF8A2CB91 /* Pods-Machina-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D32B646D7D6C1DF1AF5E807ABFAD5A4 /* Pods-Machina-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 			remoteGlobalIDString = 265D78AF28F751DE873B43A5E2BFD8C2;
 			remoteInfo = "OpalImagePicker-OpalImagePickerResources";
 		};
-		EB1628B3189D3E05C49777BEB5A1145C /* PBXContainerItemProxy */ = {
+		E0D44C52F5A735F467616E9680C02A5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -49,33 +49,33 @@
 		1873F6C91F652A4B60DA75E3773BF891 /* OpalImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpalImagePicker.release.xcconfig; sourceTree = "<group>"; };
 		18C0C849A9ABFC590EFF2935FCE30951 /* OpalImagePickerCollectionViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpalImagePickerCollectionViewLayout.swift; path = OpalImagePicker/Source/OpalImagePickerCollectionViewLayout.swift; sourceTree = "<group>"; };
 		273187BBA19213C4D8510D2BAEA6FCCC /* OpalImagePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OpalImagePicker-dummy.m"; sourceTree = "<group>"; };
-		2D32B646D7D6C1DF1AF5E807ABFAD5A4 /* Pods-Machina-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Machina-umbrella.h"; sourceTree = "<group>"; };
-		35FECCA153510DD81772E892918C1406 /* Pods-Machina.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Machina.modulemap"; sourceTree = "<group>"; };
+		300AB99D96D9BB252B6E1B312D9DA5CC /* Pods-Machinas-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Machinas-frameworks.sh"; sourceTree = "<group>"; };
+		341C8B5EC5666891EC4C418E40836F6F /* Pods-Machinas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Machinas.release.xcconfig"; sourceTree = "<group>"; };
 		484151C077E2CEBBCACC4EBBF7727D98 /* OpalImagePicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OpalImagePicker; path = OpalImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		536ACF4D96812BE0B358CADE56AF0E2C /* OpalImagePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OpalImagePicker.modulemap; sourceTree = "<group>"; };
 		5398B67E19FC99FE8A02E19BEA346E3A /* Bundle+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Helper.swift"; path = "OpalImagePicker/Source/Bundle+Helper.swift"; sourceTree = "<group>"; };
 		58959F9B3E6FAE4D8F96A49328FAEAD5 /* UIView+Helper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Helper.swift"; path = "OpalImagePicker/Source/UIView+Helper.swift"; sourceTree = "<group>"; };
 		58DBB5BC68AB64F02EB2588E747BEB86 /* OpalImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpalImagePickerController.swift; path = OpalImagePicker/Source/OpalImagePickerController.swift; sourceTree = "<group>"; };
-		598756CCCB40FC98DA122084B3B8C925 /* OpalImagePickerResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpalImagePickerResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		598756CCCB40FC98DA122084B3B8C925 /* OpalImagePicker-OpalImagePickerResources */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "OpalImagePicker-OpalImagePickerResources"; path = OpalImagePickerResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A944DD641EF678CE342F5396C909940 /* Pods-Machinas.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Machinas.modulemap"; sourceTree = "<group>"; };
 		5B115F63D79E3CB793A8DD0814EEA1E9 /* OpalImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpalImagePicker.debug.xcconfig; sourceTree = "<group>"; };
 		66A4CBE7EBB78FDA74B9B4E16F3DF2AD /* UIViewController+OpalImagePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+OpalImagePicker.swift"; path = "OpalImagePicker/Source/UIViewController+OpalImagePicker.swift"; sourceTree = "<group>"; };
 		700C8B37E3C4A8947D7E27811BCD04F5 /* OpalImagePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpalImagePicker-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		868C49531223D2B2402CBD32D66EEF93 /* TimeInterval+String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+String.swift"; path = "OpalImagePicker/Source/TimeInterval+String.swift"; sourceTree = "<group>"; };
-		916E6E933D22F0EDD2163243D9674865 /* Pods-Machina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Machina.release.xcconfig"; sourceTree = "<group>"; };
-		93F3DE31319034C63E1B9BE46650FF43 /* Pods-Machina-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Machina-frameworks.sh"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EC27FC49E35ADF2089DF1C7332C09ED /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = OpalImagePicker/SupportingFiles/Assets.xcassets; sourceTree = "<group>"; };
 		BCB4089F2F3DEAF5BA9ED536CFE11B8B /* ImagePickerCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePickerCollectionViewCell.swift; path = OpalImagePicker/Source/ImagePickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		C646C3824DDB47C8D6AF24BB3F6EC069 /* Pods-Machinas-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Machinas-umbrella.h"; sourceTree = "<group>"; };
 		C7F75E715990B4468417DC9028BBABF1 /* OpalImagePickerRootViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpalImagePickerRootViewController.swift; path = OpalImagePicker/Source/OpalImagePickerRootViewController.swift; sourceTree = "<group>"; };
-		D656ADFAB363AB078C64AD937408BDB8 /* Pods-Machina-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Machina-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CB7B46713D95A9B64D8E5FD7CAD76FD2 /* Pods-Machinas-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Machinas-dummy.m"; sourceTree = "<group>"; };
 		D987BA1DCF75F89C3A7116C0A935D31D /* ResourceBundle-OpalImagePickerResources-OpalImagePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-OpalImagePickerResources-OpalImagePicker-Info.plist"; sourceTree = "<group>"; };
-		E13115AA9B86152A1B97BB0AF160CC01 /* Pods-Machina-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Machina-acknowledgements.plist"; sourceTree = "<group>"; };
-		E66A8145CFB077A69FB33A85145915DD /* Pods-Machina */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Machina"; path = Pods_Machina.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6D710C88DF2DF5E3A8DCB6B9C6C05FC /* Pods-Machina-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Machina-dummy.m"; sourceTree = "<group>"; };
-		EB9169ECD2CDE932CDB9BEE72F56A1AB /* Pods-Machina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Machina.debug.xcconfig"; sourceTree = "<group>"; };
+		EC530B3C4500181C957B69B8AE562050 /* Pods-Machinas */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Machinas"; path = Pods_Machinas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49671D1047E60D4F5BFC8175BD8933 /* OpalImagePickerConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpalImagePickerConfiguration.swift; path = OpalImagePicker/Source/OpalImagePickerConfiguration.swift; sourceTree = "<group>"; };
-		F719E858382B83644C32616EEEFC2A37 /* Pods-Machina-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Machina-Info.plist"; sourceTree = "<group>"; };
+		EFCA2D2D0D2900E246EFC98006E88C6D /* Pods-Machinas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Machinas.debug.xcconfig"; sourceTree = "<group>"; };
+		FA045F0E6F972C672469AC21410C5CAC /* Pods-Machinas-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Machinas-Info.plist"; sourceTree = "<group>"; };
+		FB1D48AD69DE87516508B5724F8EADC6 /* Pods-Machinas-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Machinas-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FECCC0F8486106EF657D4AE6C41D17CF /* Pods-Machinas-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Machinas-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +86,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		27CB2F79597AE15D7934FB961368A789 /* Frameworks */ = {
+		334E5535F2C45BB96E15CA2B65D8D4D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				818C67B541697A7634412DFE294AC5BC /* Foundation.framework in Frameworks */,
+				3DE4C15A32DC4AAA134DD2F7884C4EAA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,12 +105,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C3C3B2C8B785F89E1C6834715ECF056 /* Targets Support Files */ = {
+		090B7135A602FCC8CC0B76BD13854C76 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9F3B8405D2EAD09FF64A444039173310 /* Pods-Machina */,
+				12CC2E6AEDECF12B88E14AF9A5E4E943 /* Pods-Machinas */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		12CC2E6AEDECF12B88E14AF9A5E4E943 /* Pods-Machinas */ = {
+			isa = PBXGroup;
+			children = (
+				5A944DD641EF678CE342F5396C909940 /* Pods-Machinas.modulemap */,
+				FB1D48AD69DE87516508B5724F8EADC6 /* Pods-Machinas-acknowledgements.markdown */,
+				FECCC0F8486106EF657D4AE6C41D17CF /* Pods-Machinas-acknowledgements.plist */,
+				CB7B46713D95A9B64D8E5FD7CAD76FD2 /* Pods-Machinas-dummy.m */,
+				300AB99D96D9BB252B6E1B312D9DA5CC /* Pods-Machinas-frameworks.sh */,
+				FA045F0E6F972C672469AC21410C5CAC /* Pods-Machinas-Info.plist */,
+				C646C3824DDB47C8D6AF24BB3F6EC069 /* Pods-Machinas-umbrella.h */,
+				EFCA2D2D0D2900E246EFC98006E88C6D /* Pods-Machinas.debug.xcconfig */,
+				341C8B5EC5666891EC4C418E40836F6F /* Pods-Machinas.release.xcconfig */,
+			);
+			name = "Pods-Machinas";
+			path = "Target Support Files/Pods-Machinas";
+			sourceTree = "<group>";
+		};
+		1A534C3A25E1FD2E2288C36F6D7E52AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				484151C077E2CEBBCACC4EBBF7727D98 /* OpalImagePicker */,
+				598756CCCB40FC98DA122084B3B8C925 /* OpalImagePicker-OpalImagePickerResources */,
+				EC530B3C4500181C957B69B8AE562050 /* Pods-Machinas */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -119,23 +146,6 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		9F3B8405D2EAD09FF64A444039173310 /* Pods-Machina */ = {
-			isa = PBXGroup;
-			children = (
-				35FECCA153510DD81772E892918C1406 /* Pods-Machina.modulemap */,
-				D656ADFAB363AB078C64AD937408BDB8 /* Pods-Machina-acknowledgements.markdown */,
-				E13115AA9B86152A1B97BB0AF160CC01 /* Pods-Machina-acknowledgements.plist */,
-				E6D710C88DF2DF5E3A8DCB6B9C6C05FC /* Pods-Machina-dummy.m */,
-				93F3DE31319034C63E1B9BE46650FF43 /* Pods-Machina-frameworks.sh */,
-				F719E858382B83644C32616EEEFC2A37 /* Pods-Machina-Info.plist */,
-				2D32B646D7D6C1DF1AF5E807ABFAD5A4 /* Pods-Machina-umbrella.h */,
-				EB9169ECD2CDE932CDB9BEE72F56A1AB /* Pods-Machina.debug.xcconfig */,
-				916E6E933D22F0EDD2163243D9674865 /* Pods-Machina.release.xcconfig */,
-			);
-			name = "Pods-Machina";
-			path = "Target Support Files/Pods-Machina";
 			sourceTree = "<group>";
 		};
 		A1E5CDE13F7CBDEEF8154291087BE28D /* Pods */ = {
@@ -161,6 +171,7 @@
 				F74066985C46DFB84FC2174B9E5F78EE /* Resources */,
 				D4CC398309E9B8BB40E91A385B44C9F2 /* Support Files */,
 			);
+			name = OpalImagePicker;
 			path = OpalImagePicker;
 			sourceTree = "<group>";
 		};
@@ -170,8 +181,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				A1E5CDE13F7CBDEEF8154291087BE28D /* Pods */,
-				EE9EF82756DDB1C9795F3E58D3F1C413 /* Products */,
-				3C3C3B2C8B785F89E1C6834715ECF056 /* Targets Support Files */,
+				1A534C3A25E1FD2E2288C36F6D7E52AA /* Products */,
+				090B7135A602FCC8CC0B76BD13854C76 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,16 +210,6 @@
 			path = "../Target Support Files/OpalImagePicker";
 			sourceTree = "<group>";
 		};
-		EE9EF82756DDB1C9795F3E58D3F1C413 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				484151C077E2CEBBCACC4EBBF7727D98 /* OpalImagePicker */,
-				598756CCCB40FC98DA122084B3B8C925 /* OpalImagePickerResources.bundle */,
-				E66A8145CFB077A69FB33A85145915DD /* Pods-Machina */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F74066985C46DFB84FC2174B9E5F78EE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,19 +221,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1378D7E7D0993013997321BF6BECAA38 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8178BB9304A71567501089BF8A2CB91 /* Pods-Machina-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9DF4CEC4A1823C19AF83D6BDE87DDDB6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CAD76A483D082ECBB29B0BE9906B3712 /* OpalImagePicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA6EB9BDCEE02B39AD5C88A2E22DD2BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05D8AAE0D9EFA08F5376FBD5C71CB4A2 /* Pods-Machinas-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,26 +273,26 @@
 			);
 			name = "OpalImagePicker-OpalImagePickerResources";
 			productName = OpalImagePickerResources;
-			productReference = 598756CCCB40FC98DA122084B3B8C925 /* OpalImagePickerResources.bundle */;
+			productReference = 598756CCCB40FC98DA122084B3B8C925 /* OpalImagePicker-OpalImagePickerResources */;
 			productType = "com.apple.product-type.bundle";
 		};
-		6503A1ADD46CB5B7AA1C7EB7004560E7 /* Pods-Machina */ = {
+		917BEAA207549C6D8C27E1301CB7CEE3 /* Pods-Machinas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94202980EC77F459BB82A0E7CCD48ED9 /* Build configuration list for PBXNativeTarget "Pods-Machina" */;
+			buildConfigurationList = 782A855B46485723E576BEC10D8A0741 /* Build configuration list for PBXNativeTarget "Pods-Machinas" */;
 			buildPhases = (
-				1378D7E7D0993013997321BF6BECAA38 /* Headers */,
-				A620B975E5659DAD51DD76B7E76435C4 /* Sources */,
-				27CB2F79597AE15D7934FB961368A789 /* Frameworks */,
-				26214654BA7AA3BA1708A5475979A29C /* Resources */,
+				BA6EB9BDCEE02B39AD5C88A2E22DD2BB /* Headers */,
+				2094AE9508B17E99DD1144B97382DA90 /* Sources */,
+				334E5535F2C45BB96E15CA2B65D8D4D4 /* Frameworks */,
+				D04DDC3BBC0D54B99BEC81D1FCAFAEBE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7764A7A9EF41C5A64DA6143988AFF5A2 /* PBXTargetDependency */,
+				2C67FDC5A4B1143081FEE4E2A86926CA /* PBXTargetDependency */,
 			);
-			name = "Pods-Machina";
-			productName = Pods_Machina;
-			productReference = E66A8145CFB077A69FB33A85145915DD /* Pods-Machina */;
+			name = "Pods-Machinas";
+			productName = Pods_Machinas;
+			productReference = EC530B3C4500181C957B69B8AE562050 /* Pods-Machinas */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -312,30 +313,23 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = EE9EF82756DDB1C9795F3E58D3F1C413 /* Products */;
+			productRefGroup = 1A534C3A25E1FD2E2288C36F6D7E52AA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				20485D6CEA89F18A813D04A2DFF7D56F /* OpalImagePicker */,
 				265D78AF28F751DE873B43A5E2BFD8C2 /* OpalImagePicker-OpalImagePickerResources */,
-				6503A1ADD46CB5B7AA1C7EB7004560E7 /* Pods-Machina */,
+				917BEAA207549C6D8C27E1301CB7CEE3 /* Pods-Machinas */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		26214654BA7AA3BA1708A5475979A29C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		286C8B52AEC1002743E8FBDFCE8BB520 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65440672B555F566C9CE4995FE0C353 /* OpalImagePickerResources.bundle in Resources */,
+				A65440672B555F566C9CE4995FE0C353 /* OpalImagePicker-OpalImagePickerResources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,14 +341,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D04DDC3BBC0D54B99BEC81D1FCAFAEBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A620B975E5659DAD51DD76B7E76435C4 /* Sources */ = {
+		2094AE9508B17E99DD1144B97382DA90 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52523DE37BB6706C9DE828C90A61CBA3 /* Pods-Machina-dummy.m in Sources */,
+				677568E704F2E0062ED67A71BF6D2A88 /* Pods-Machinas-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,11 +386,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7764A7A9EF41C5A64DA6143988AFF5A2 /* PBXTargetDependency */ = {
+		2C67FDC5A4B1143081FEE4E2A86926CA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OpalImagePicker;
 			target = 20485D6CEA89F18A813D04A2DFF7D56F /* OpalImagePicker */;
-			targetProxy = EB1628B3189D3E05C49777BEB5A1145C /* PBXContainerItemProxy */;
+			targetProxy = E0D44C52F5A735F467616E9680C02A5D /* PBXContainerItemProxy */;
 		};
 		B20321CC8493E8D4F46F63B985EE0563 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -405,7 +406,6 @@
 			baseConfigurationReference = 5B115F63D79E3CB793A8DD0814EEA1E9 /* OpalImagePicker.debug.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OpalImagePicker";
-				DEVELOPMENT_TEAM = P4VV3YY3TJ;
 				IBSC_MODULE = OpalImagePicker;
 				INFOPLIST_FILE = "Target Support Files/OpalImagePicker/ResourceBundle-OpalImagePickerResources-OpalImagePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -417,9 +417,9 @@
 			};
 			name = Debug;
 		};
-		334E5AD72C9F2EF8EE114C1A69614B36 /* Release */ = {
+		40B67D89BB09F2845A6178233EF1CE28 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 916E6E933D22F0EDD2163243D9674865 /* Pods-Machina.release.xcconfig */;
+			baseConfigurationReference = EFCA2D2D0D2900E246EFC98006E88C6D /* Pods-Machinas.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -431,7 +431,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Machina/Pods-Machina-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Machinas/Pods-Machinas-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,45 +440,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Machina/Pods-Machina.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		502C42793EAB1BD327E59180710674C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB9169ECD2CDE932CDB9BEE72F56A1AB /* Pods-Machina.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Machina/Pods-Machina-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Machina/Pods-Machina.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-Machinas/Pods-Machinas.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -497,7 +459,6 @@
 			baseConfigurationReference = 1873F6C91F652A4B60DA75E3773BF891 /* OpalImagePicker.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/OpalImagePicker";
-				DEVELOPMENT_TEAM = P4VV3YY3TJ;
 				IBSC_MODULE = OpalImagePicker;
 				INFOPLIST_FILE = "Target Support Files/OpalImagePicker/ResourceBundle-OpalImagePickerResources-OpalImagePicker-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -708,6 +669,44 @@
 			};
 			name = Debug;
 		};
+		B0B7106F7583D1490D082F510C28B81C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 341C8B5EC5666891EC4C418E40836F6F /* Pods-Machinas.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Machinas/Pods-Machinas-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Machinas/Pods-Machinas.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -729,11 +728,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94202980EC77F459BB82A0E7CCD48ED9 /* Build configuration list for PBXNativeTarget "Pods-Machina" */ = {
+		782A855B46485723E576BEC10D8A0741 /* Build configuration list for PBXNativeTarget "Pods-Machinas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				502C42793EAB1BD327E59180710674C2 /* Debug */,
-				334E5AD72C9F2EF8EE114C1A69614B36 /* Release */,
+				40B67D89BB09F2845A6178233EF1CE28 /* Debug */,
+				B0B7106F7583D1490D082F510C28B81C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
