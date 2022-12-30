@@ -20,6 +20,7 @@
 		FF21E58B295AF24E008A8703 /* MachineListUpdateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E58A295AF24E008A8703 /* MachineListUpdateDelegate.swift */; };
 		FF21E58F295B7A35008A8703 /* DetailMachineImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E58E295B7A35008A8703 /* DetailMachineImageCollectionViewCell.swift */; };
 		FF21E591295B7B0D008A8703 /* UICollectionViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21E590295B7B0D008A8703 /* UICollectionViewCell+Extensions.swift */; };
+		FF3E9BE0295EAF91008A0151 /* MachinasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3E9BDF295EAF91008A0151 /* MachinasTests.swift */; };
 		FF66603A295948F400988F7D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF666039295948F400988F7D /* Constants.swift */; };
 		FF66603D295955F400988F7D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603C295955F400988F7D /* Realm */; };
 		FF66603F295955F400988F7D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FF66603E295955F400988F7D /* RealmSwift */; };
@@ -41,6 +42,16 @@
 		FFEA9009295767F800E013A0 /* MachineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA9006295767C700E013A0 /* MachineListViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FF3E9BE1295EAF91008A0151 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFEA8FD62957459B00E013A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFEA8FDD2957459B00E013A0;
+			remoteInfo = Machinas;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6F7337DB35D06F303FEB0BC9 /* Pods-Machinas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Machinas.debug.xcconfig"; path = "Target Support Files/Pods-Machinas/Pods-Machinas.debug.xcconfig"; sourceTree = "<group>"; };
 		C6BA1046BE67CDC8B63F6715 /* Pods-Machinas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Machinas.release.xcconfig"; path = "Target Support Files/Pods-Machinas/Pods-Machinas.release.xcconfig"; sourceTree = "<group>"; };
@@ -57,6 +68,8 @@
 		FF21E58A295AF24E008A8703 /* MachineListUpdateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineListUpdateDelegate.swift; sourceTree = "<group>"; };
 		FF21E58E295B7A35008A8703 /* DetailMachineImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMachineImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF21E590295B7B0D008A8703 /* UICollectionViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		FF3E9BDD295EAF91008A0151 /* MachinasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MachinasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3E9BDF295EAF91008A0151 /* MachinasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachinasTests.swift; sourceTree = "<group>"; };
 		FF666039295948F400988F7D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FFA7E8EC295803E30069114E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		FFA7E8EF295804E80069114E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -79,6 +92,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF3E9BDA295EAF91008A0151 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEA8FDB2957459B00E013A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +173,14 @@
 			path = cells;
 			sourceTree = "<group>";
 		};
+		FF3E9BDE295EAF91008A0151 /* MachinasTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF3E9BDF295EAF91008A0151 /* MachinasTests.swift */,
+			);
+			path = MachinasTests;
+			sourceTree = "<group>";
+		};
 		FFA7E8EB295803C40069114E /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				FFEA8FE02957459B00E013A0 /* Machina */,
+				FF3E9BDE295EAF91008A0151 /* MachinasTests */,
 				FFEA8FDF2957459B00E013A0 /* Products */,
 				AFDE44D9431E7A1EF8D2E7E4 /* Pods */,
 				9A6E43E225E5640D49591591 /* Frameworks */,
@@ -213,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				FFEA8FDE2957459B00E013A0 /* Machinas.app */,
+				FF3E9BDD295EAF91008A0151 /* MachinasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,6 +309,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF3E9BDC295EAF91008A0151 /* MachinasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF3E9BE3295EAF91008A0151 /* Build configuration list for PBXNativeTarget "MachinasTests" */;
+			buildPhases = (
+				FF3E9BD9295EAF91008A0151 /* Sources */,
+				FF3E9BDA295EAF91008A0151 /* Frameworks */,
+				FF3E9BDB295EAF91008A0151 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF3E9BE2295EAF91008A0151 /* PBXTargetDependency */,
+			);
+			name = MachinasTests;
+			productName = MachinasTests;
+			productReference = FF3E9BDD295EAF91008A0151 /* MachinasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FFEA8FDD2957459B00E013A0 /* Machinas */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFEA8FF22957459D00E013A0 /* Build configuration list for PBXNativeTarget "Machinas" */;
@@ -309,9 +357,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					FF3E9BDC295EAF91008A0151 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = FFEA8FDD2957459B00E013A0;
+					};
 					FFEA8FDD2957459B00E013A0 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -327,18 +379,26 @@
 			);
 			mainGroup = FFEA8FD52957459B00E013A0;
 			packageReferences = (
-				FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = FFEA8FDF2957459B00E013A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FFEA8FDD2957459B00E013A0 /* Machinas */,
+				FF3E9BDC295EAF91008A0151 /* MachinasTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF3E9BDB295EAF91008A0151 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEA8FDC2957459B00E013A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,6 +453,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF3E9BD9295EAF91008A0151 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF3E9BE0295EAF91008A0151 /* MachinasTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEA8FDA2957459B00E013A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +497,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FF3E9BE2295EAF91008A0151 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFEA8FDD2957459B00E013A0 /* Machinas */;
+			targetProxy = FF3E9BE1295EAF91008A0151 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		FFEA8FEC2957459D00E013A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -441,6 +517,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FF3E9BE4295EAF91008A0151 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4VV3YY3TJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TimotiusLeoLia.MachinasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Machinas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Machinas";
+			};
+			name = Debug;
+		};
+		FF3E9BE5295EAF91008A0151 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P4VV3YY3TJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TimotiusLeoLia.MachinasTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Machinas.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Machinas";
+			};
+			name = Release;
+		};
 		FFEA8FF02957459D00E013A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -632,6 +746,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF3E9BE3295EAF91008A0151 /* Build configuration list for PBXNativeTarget "MachinasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF3E9BE4295EAF91008A0151 /* Debug */,
+				FF3E9BE5295EAF91008A0151 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFEA8FD92957459B00E013A0 /* Build configuration list for PBXProject "Machinas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -653,7 +776,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -666,12 +789,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		FF66603C295955F400988F7D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
 		FF66603E295955F400988F7D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = FF66603B295955F400988F7D /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
